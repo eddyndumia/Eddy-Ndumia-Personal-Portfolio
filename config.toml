@@ -1,0 +1,65 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Eddy Ndumia"
+theme = "PaperMod"
+
+[params]
+env = "production"
+author = "Eddy Ndumia"
+defaultTheme = "auto"
+description = "Personal website — projects, bio, blog"
+DateFormat = "January 2, 2006"
+
+[params.profileMode]
+enabled = true
+title = "Eddy Ndumia"
+subtitle = "Hi! I'm a Mathematics and Computer Science student at JKUAT, graduating December 2026. I build data pipelines and explore data engineering because, frankly, data is gold — and I like making sure it doesn't get lost under a pile of spreadsheets. I'm currently diving into AWS and figuring out how to turn raw data into actionable insights in real-world DataOps workflows. When I'm not wrangling data, I'm experimenting with ways to make systems smarter, faster, and just a little bit cooler."
+imageUrl = "/images/profile.jpg"
+imageWidth = 120
+imageHeight = 120
+imageTitle = "Eddy Ndumia"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/eddyndumia"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/eddyndumia/"
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/traderndumia"
+
+[pagination]
+pagerSize = 10
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
+weight = 2
+
+[[menu.main]]
+identifier = "bio"
+name = "Bio"
+url = "/bio/"
+weight = 3
+
+[[menu.main]]
+identifier = "resume"
+name = "Resume"
+url = "/resume/"
+weight = 4
+
+[[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/posts/"
+weight = 5
