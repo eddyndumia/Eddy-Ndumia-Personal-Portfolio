@@ -1,4 +1,4 @@
-baseURL = "https://eddy-ndumia-personal-portfolio.pages.dev"
+baseURL = "/"
 languageCode = "en-us"
 title = "Eddy Ndumia"
 theme = "PaperMod"
