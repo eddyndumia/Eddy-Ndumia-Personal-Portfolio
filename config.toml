@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://eddy-ndumia-personal-portfolio.pages.dev/"
 languageCode = "en-us"
 title = "Eddy Ndumia"
 theme = "PaperMod"
@@ -33,6 +33,9 @@ url = "https://twitter.com/traderndumia"
 
 [pagination]
 pagerSize = 10
+
+[minify]
+disableJSON = true
 
 [[menu.main]]
 identifier = "home"
