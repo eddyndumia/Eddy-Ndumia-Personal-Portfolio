@@ -6,7 +6,9 @@ Currently I am an undergraduate student pursuing a Bachelor of Science in Mathem
 
 **Academic Background**: Prior to joining JKUAT in 2020, I attended Murang'a High School (2016–2019). My coursework and projects have covered topics including Calculus, Linear Algebra, Probability and Statistics, Data Structures and Algorithms, Database Systems, and Artificial Intelligence.
 
-**Professional Experience**: I have experience as a freelance web developer since 2020, designing and developing responsive websites using WordPress and custom full-stack solutions. I also led a university project team to build a web-based housing management system. I have completed certifications in Networking, Data Science with Python, and Web & Mobile Application Development. I occasionally take on independent software and machine learning projects—reach out if you have an interesting project I can contribute to.
+**Professional Experience**: I have experience as a freelance web developer since 2020, designing and developing responsive websites using WordPress and custom full-stack solutions. I also led a university project team to build a web-based housing management system. I have completed certifications in Networking, Data Science with Python, and Web & Mobile Application Development.
+
+**Currently Building**: I'm an AI enthusiast with data engineering experience on AWS, and I'm applying that to [PesaScore](https://github.com/eddyndumia/scorewise), a fintech platform that scores creditworthiness from alternative data (starting with M-Pesa statements) instead of a traditional credit bureau — a consumer app, a lender dashboard with real multi-tenant identity and consent flows, and a Postgres/Supabase backend, all built from the ground up. I occasionally take on independent software and machine learning projects — reach out if you have an interesting one for me to contribute to.
 
 ## Timeline
 

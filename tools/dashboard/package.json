@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local admin dashboard for editing and pushing changes to the portfolio site.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

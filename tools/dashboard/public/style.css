@@ -1,0 +1,84 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f6f6f4;
+  --card: #ffffff;
+  --border: #ddd;
+  --text: #1a1a1a;
+  --muted: #666;
+  --accent: #2f6feb;
+  --danger: #c0392b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --card: #1e2126;
+    --border: #333;
+    --text: #eee;
+    --muted: #999;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+h1 { font-size: 1.2rem; margin: 0; }
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+.card h2 { margin-top: 0; font-size: 1rem; }
+.hint { color: var(--muted); font-size: 0.85rem; margin-top: -8px; }
+textarea, input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  margin-bottom: 8px;
+  resize: vertical;
+}
+button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+button.danger { background: var(--danger); border-color: var(--danger); }
+button#refresh-btn, button.p-delete + .status { background: transparent; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.status { font-size: 0.8rem; color: var(--muted); }
+.project {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.git-summary { font-size: 0.85rem; color: var(--muted); }
+.changes-list { font-family: monospace; font-size: 0.8rem; white-space: pre-wrap; color: var(--muted); margin-bottom: 8px; }
+.git-output { font-size: 0.8rem; white-space: pre-wrap; background: var(--bg); padding: 8px; border-radius: 6px; max-height: 200px; overflow: auto; }

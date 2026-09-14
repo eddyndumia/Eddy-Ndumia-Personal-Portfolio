@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Portfolio Dashboard</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Portfolio Dashboard</h1>
+    <div id="git-summary" class="git-summary">loading…</div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>About — profile subtitle</h2>
+      <p class="hint">Shown at the top of your homepage in profile mode.</p>
+      <textarea id="subtitle" rows="5"></textarea>
+      <button data-save="subtitle">Save subtitle</button>
+      <span class="status" id="status-subtitle"></span>
+    </section>
+
+    <section class="card">
+      <h2>Bio page</h2>
+      <p class="hint">Full content of /bio/ (markdown, frontmatter kept as-is).</p>
+      <textarea id="bio" rows="14"></textarea>
+      <button data-save="bio">Save bio</button>
+      <span class="status" id="status-bio"></span>
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+      <div id="projects-list"></div>
+      <button id="add-project">+ Add project</button>
+    </section>
+
+    <section class="card">
+      <h2>Resume page (advanced)</h2>
+      <p class="hint">Raw markdown for /resume/ — the PDF embed shortcode lives here.</p>
+      <textarea id="resume" rows="6"></textarea>
+      <button data-save="resume">Save resume page</button>
+      <span class="status" id="status-resume"></span>
+    </section>
+
+    <section class="card">
+      <h2>Push changes</h2>
+      <div id="changes-list" class="changes-list"></div>
+      <textarea id="commit-message" rows="2" placeholder="Commit message"></textarea>
+      <div class="row">
+        <button id="commit-btn">Commit</button>
+        <button id="push-btn">Push</button>
+        <button id="refresh-btn">Refresh status</button>
+      </div>
+      <pre id="git-output" class="git-output"></pre>
+    </section>
+  </main>
+
+  <template id="project-template">
+    <div class="project" data-slug="">
+      <div class="row">
+        <input class="p-title" placeholder="Title" />
+        <input class="p-date" placeholder="YYYY-MM-DD" />
+      </div>
+      <input class="p-summary" placeholder="One-line summary" />
+      <textarea class="p-body" rows="6" placeholder="Project write-up (markdown)"></textarea>
+      <div class="row">
+        <button class="p-save">Save</button>
+        <button class="p-delete danger">Delete</button>
+        <span class="status p-status"></span>
+      </div>
+    </div>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
