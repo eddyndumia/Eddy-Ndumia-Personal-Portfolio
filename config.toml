@@ -6,7 +6,9 @@ theme = "PaperMod"
 [params]
 env = "production"
 author = "Eddy Ndumia"
-defaultTheme = "auto"
+defaultTheme = "light"
+disableThemeToggle = true
+ShowReadingTime = true
 description = "Personal website — projects, bio, blog"
 DateFormat = "January 2, 2006"
 
