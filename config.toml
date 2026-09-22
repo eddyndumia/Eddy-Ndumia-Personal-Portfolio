@@ -12,9 +12,6 @@ ShowReadingTime = true
 description = "Personal website — projects, bio, blog"
 DateFormat = "2006-01-02"
 
-[params.label]
-text = "eddy@ndumia:~$"
-
 [params.profileMode]
 enabled = true
 title = "Eddy Ndumia"
