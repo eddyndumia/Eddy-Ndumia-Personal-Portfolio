@@ -1,6 +1,6 @@
 ---
 title: "The Diaspora Already Sends Money Home. We Should Let Them Send Things."
-date: 2026-09-23
+date: 2026-09-23T00:00:00+03:00
 ---
 
 Almost every Kenyan family I know has someone abroad. An uncle in Dallas, a cousin nursing in the UK, a sister in Dubai, a friend doing construction in Qatar. And almost every one of those people sends money home. Kenya gets close to five billion dollars a year this way, it's one of the biggest sources of foreign money the country has, bigger than tea, bigger than tourism some years.
