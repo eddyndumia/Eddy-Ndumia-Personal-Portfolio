@@ -57,52 +57,84 @@
     {{- end }}
 
     {{- if eq .Type "posts" }}
-    <button class="heart-react" type="button" aria-pressed="false" aria-label="React with a heart">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 20.5s-7.5-4.6-10-9.3C0.3 7.8 2 4.5 5.3 4c2-.3 3.8.6 5 2.2C11.5 4.6 13.3 3.7 15.3 4c3.3.5 5 3.8 3.3 7.2-2.5 4.7-10 9.3-10 9.3z"/>
-      </svg>
-      <span class="heart-label">heart this</span>
-    </button>
+    <div class="reactions">
+      <button class="reaction-btn" type="button" data-reaction="heart" aria-pressed="false" aria-label="React with a heart">
+        <svg class="reaction-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 20.5s-7.5-4.6-10-9.3C0.3 7.8 2 4.5 5.3 4c2-.3 3.8.6 5 2.2C11.5 4.6 13.3 3.7 15.3 4c3.3.5 5 3.8 3.3 7.2-2.5 4.7-10 9.3-10 9.3z"/>
+        </svg>
+        <span class="reaction-count" data-count></span>
+      </button>
+      <button class="reaction-btn" type="button" data-reaction="skull" aria-pressed="false" aria-label="React with a skull emoji">
+        <span class="reaction-icon reaction-emoji">&#128128;</span>
+        <span class="reaction-count" data-count></span>
+      </button>
+    </div>
     <script>
       (function () {
-        var btn = document.currentScript.previousElementSibling;
-        if (!btn || !btn.classList.contains('heart-react')) {
-          btn = document.querySelector('.heart-react');
-        }
-        if (!btn) return;
-        var key = 'heart:' + window.location.pathname;
-        var liked = false;
-        try { liked = localStorage.getItem(key) === '1'; } catch (e) {}
+        var ABACUS = 'https://abacus.jasoncameron.dev';
+        var NAMESPACE = 'ndumia-blog-reactions';
+        var slug = (window.location.pathname.replace(/\/+$/, '').split('/').pop() || 'home');
 
-        function render() {
-          btn.classList.toggle('is-liked', liked);
-          btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
-          btn.querySelector('.heart-label').textContent = liked ? 'hearted' : 'heart this';
-        }
-        render();
+        document.querySelectorAll('.reaction-btn').forEach(function (btn) {
+          var reaction = btn.getAttribute('data-reaction');
+          var key = reaction + '_' + slug;
+          var countEl = btn.querySelector('[data-count]');
+          var reactedKey = 'reacted:' + reaction + ':' + slug;
+          var counted = false;
+          var active = false;
+          try {
+            active = localStorage.getItem(reactedKey) === '1';
+            counted = localStorage.getItem(reactedKey + ':counted') === '1';
+          } catch (e) {}
 
-        function burst() {
-          for (var i = 0; i < 6; i++) {
-            var p = document.createElement('span');
-            p.className = 'heart-particle';
-            var angle = (Math.PI * 2 * i) / 6;
-            p.style.setProperty('--dx', (Math.cos(angle) * 22).toFixed(1) + 'px');
-            p.style.setProperty('--dy', (Math.sin(angle) * 22).toFixed(1) + 'px');
-            btn.appendChild(p);
-            p.addEventListener('animationend', function () { this.remove(); });
+          function setCount(n) {
+            countEl.textContent = n > 0 ? n : '';
           }
-        }
 
-        btn.addEventListener('click', function () {
-          liked = !liked;
-          try { localStorage.setItem(key, liked ? '1' : '0'); } catch (e) {}
+          function render() {
+            btn.classList.toggle('is-active', active);
+            btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+          }
           render();
-          if (liked) {
+
+          fetch(ABACUS + '/get/' + NAMESPACE + '/' + key)
+            .then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (data) { if (data && typeof data.value === 'number') setCount(data.value); })
+            .catch(function () {});
+
+          function burst() {
+            for (var i = 0; i < 6; i++) {
+              var p = document.createElement('span');
+              p.className = 'reaction-particle';
+              var angle = (Math.PI * 2 * i) / 6;
+              p.style.setProperty('--dx', (Math.cos(angle) * 22).toFixed(1) + 'px');
+              p.style.setProperty('--dy', (Math.sin(angle) * 22).toFixed(1) + 'px');
+              btn.appendChild(p);
+              p.addEventListener('animationend', function () { this.remove(); });
+            }
+          }
+
+          btn.addEventListener('click', function () {
+            active = !active;
+            try { localStorage.setItem(reactedKey, active ? '1' : '0'); } catch (e) {}
+            render();
+            if (!active) return;
+
             btn.classList.remove('pop');
             void btn.offsetWidth;
             btn.classList.add('pop');
             burst();
-          }
+
+            if (counted) return;
+            fetch(ABACUS + '/hit/' + NAMESPACE + '/' + key)
+              .then(function (r) { return r.ok ? r.json() : null; })
+              .then(function (data) {
+                if (data && typeof data.value === 'number') setCount(data.value);
+                counted = true;
+                try { localStorage.setItem(reactedKey + ':counted', '1'); } catch (e) {}
+              })
+              .catch(function () {});
+          });
         });
       })();
     </script>

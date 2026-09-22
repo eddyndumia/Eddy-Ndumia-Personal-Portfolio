@@ -254,13 +254,18 @@ a:hover {
     border: 1px solid var(--border);
 }
 
-/* ---------- heart reaction ---------- */
-.heart-react {
+/* ---------- reactions (heart + skull) ---------- */
+.reactions {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.reaction-btn {
     position: relative;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    margin-top: 28px;
     padding: 8px 16px;
     border: 1px solid var(--border);
     border-radius: 999px;
@@ -273,14 +278,17 @@ a:hover {
     transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
 }
 
-.heart-react:hover {
-    border-color: #e8a8b4;
-    color: #d63c5e;
-}
-
-.heart-react svg {
+.reaction-icon {
     width: 16px;
     height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.reaction-btn svg.reaction-icon {
     fill: none;
     stroke: currentColor;
     stroke-width: 1.6;
@@ -288,18 +296,47 @@ a:hover {
     stroke-linecap: round;
 }
 
-.heart-react.is-liked {
+.reaction-count {
+    min-width: 6px;
+    color: #bbbbbb;
+}
+
+.reaction-btn[data-reaction="heart"]:hover {
+    border-color: #e8a8b4;
+    color: #d63c5e;
+}
+
+.reaction-btn[data-reaction="heart"].is-active {
     color: #d63c5e;
     border-color: #f3c6cf;
     background: #fff5f7;
 }
 
-.heart-react.is-liked svg {
+.reaction-btn[data-reaction="heart"].is-active svg.reaction-icon {
     fill: #d63c5e;
     stroke: #d63c5e;
 }
 
-.heart-react.pop svg {
+.reaction-btn[data-reaction="heart"].is-active .reaction-count {
+    color: #d63c5e;
+}
+
+.reaction-btn[data-reaction="skull"]:hover {
+    border-color: #cccccc;
+    color: #333333;
+}
+
+.reaction-btn[data-reaction="skull"].is-active {
+    border-color: #cccccc;
+    background: #f4f4f4;
+    color: #222222;
+}
+
+.reaction-btn[data-reaction="skull"].is-active .reaction-count {
+    color: #222222;
+}
+
+.reaction-btn.pop .reaction-icon {
     animation: heart-pop 0.5s cubic-bezier(0.17, 0.89, 0.32, 1.49);
 }
 
@@ -321,14 +358,14 @@ a:hover {
     }
 }
 
-.heart-particle {
+.reaction-particle {
     position: absolute;
     left: 24px;
     top: 50%;
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: #d63c5e;
+    background: currentColor;
     pointer-events: none;
     animation: heart-particle 0.6s ease-out forwards;
 }
