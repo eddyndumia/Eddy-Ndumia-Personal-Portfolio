@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://ndumia.netlify.app/"
 languageCode = "en-us"
 title = "Eddy Ndumia"
 theme = "PaperMod"
