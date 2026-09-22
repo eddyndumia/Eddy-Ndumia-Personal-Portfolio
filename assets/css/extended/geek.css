@@ -254,6 +254,97 @@ a:hover {
     border: 1px solid var(--border);
 }
 
+/* ---------- heart reaction ---------- */
+.heart-react {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: #999999;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.heart-react:hover {
+    border-color: #e8a8b4;
+    color: #d63c5e;
+}
+
+.heart-react svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.heart-react.is-liked {
+    color: #d63c5e;
+    border-color: #f3c6cf;
+    background: #fff5f7;
+}
+
+.heart-react.is-liked svg {
+    fill: #d63c5e;
+    stroke: #d63c5e;
+}
+
+.heart-react.pop svg {
+    animation: heart-pop 0.5s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+}
+
+@keyframes heart-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    35% {
+        transform: scale(1.4);
+    }
+
+    60% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.heart-particle {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #d63c5e;
+    pointer-events: none;
+    animation: heart-particle 0.6s ease-out forwards;
+}
+
+@keyframes heart-particle {
+    0% {
+        transform: translate(0, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--dx), calc(-50% + var(--dy))) scale(0);
+        opacity: 0;
+    }
+}
+
 /* ---------- footer ---------- */
 .footer {
     border-top: 1px solid var(--border);
