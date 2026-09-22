@@ -425,17 +425,22 @@ a:hover {
     padding: 6px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     min-width: 160px;
+    max-width: 220px;
     overflow: visible;
+    line-height: 1.4;
 }
 
 .header.menu-open #menu li {
     margin: 0;
+    line-height: 1.4;
 }
 
 .header.menu-open #menu a {
     display: block;
     padding: 8px 10px;
     border-radius: 6px;
+    line-height: 1.4;
+    white-space: normal;
 }
 
 .header.menu-open #menu a:hover {
