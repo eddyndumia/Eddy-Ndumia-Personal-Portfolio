@@ -63,7 +63,7 @@
       data-legacy='{{ $legacy | jsonify }}'>
       {{- range slice (dict "id" "heart" "img" "heart.png" "label" "Love it") (dict "id" "clap" "img" "clap.png" "label" "Clap") (dict "id" "laugh" "img" "rotfl.png" "label" "Haha") }}
       <button class="reaction-btn" type="button" data-reaction="{{ .id }}" aria-pressed="false" aria-label="{{ .label }}">
-        <img class="reaction-icon reaction-emoji" src="/images/emoji/{{ .img }}" alt="" width="72" height="72" loading="lazy">
+        <img class="reaction-icon reaction-emoji" src="{{ printf "images/emoji/%s" .img | absURL }}" alt="" width="72" height="72" loading="lazy">
         <span class="reaction-count" data-count></span>
       </button>
       {{- end }}

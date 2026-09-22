@@ -18,7 +18,7 @@ text = "Emoji by [Twemoji](https://github.com/jdecked/twemoji) (CC-BY 4.0)"
 enabled = true
 title = "Eddy Ndumia"
 subtitle = "Hi! I'm a Mathematics and Computer Science student at JKUAT, graduating December 2026. I'm an AI enthusiast with data engineering experience on AWS — I like turning raw, messy data into pipelines and models that actually hold up in production. Right now that means building PesaScore, a fintech platform that scores creditworthiness from alternative data (like M-Pesa statements) instead of a traditional credit bureau. When I'm not building, I'm usually deep in a terminal chasing down an edge case nobody asked about."
-imageUrl = "/images/profile.jpg"
+imageUrl = "images/profile.jpg"
 imageWidth = 120
 imageHeight = 120
 imageTitle = "Eddy Ndumia"
@@ -44,29 +44,29 @@ disableJSON = true
 [[menu.main]]
 identifier = "home"
 name = "Home"
-url = "/"
+url = ""
 weight = 1
 
 [[menu.main]]
 identifier = "projects"
 name = "Projects"
-url = "/projects/"
+url = "projects/"
 weight = 2
 
 [[menu.main]]
 identifier = "bio"
 name = "Bio"
-url = "/bio/"
+url = "bio/"
 weight = 3
 
 [[menu.main]]
 identifier = "resume"
 name = "Resume"
-url = "/resume/"
+url = "resume/"
 weight = 4
 
 [[menu.main]]
 identifier = "thoughts"
 name = "Thoughts"
-url = "/posts/"
+url = "posts/"
 weight = 5
