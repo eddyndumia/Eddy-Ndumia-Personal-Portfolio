@@ -254,7 +254,7 @@ a:hover {
     border: 1px solid var(--border);
 }
 
-/* ---------- reactions (heart + skull) ---------- */
+/* ---------- reactions (heart + rotfl, native emoji) ---------- */
 .reactions {
     display: flex;
     gap: 10px;
@@ -266,7 +266,7 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 8px 16px;
+    padding: 7px 16px;
     border: 1px solid var(--border);
     border-radius: 999px;
     background: transparent;
@@ -274,66 +274,40 @@ a:hover {
     font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
     font-size: 12px;
     letter-spacing: 0.02em;
-    color: #999999;
-    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    color: #bbbbbb;
+    transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.reaction-icon {
-    width: 16px;
-    height: 16px;
+.reaction-btn:hover {
+    border-color: #cccccc;
+}
+
+.reaction-emoji {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1;
+    filter: grayscale(1);
+    opacity: 0.55;
+    transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
-.reaction-btn svg.reaction-icon {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.6;
-    stroke-linejoin: round;
-    stroke-linecap: round;
+.reaction-btn:hover .reaction-emoji {
+    opacity: 0.8;
+}
+
+.reaction-btn.is-active .reaction-emoji {
+    filter: none;
+    opacity: 1;
 }
 
 .reaction-count {
     min-width: 6px;
-    color: #bbbbbb;
 }
 
-.reaction-btn[data-reaction="heart"]:hover {
-    border-color: #e8a8b4;
-    color: #d63c5e;
-}
-
-.reaction-btn[data-reaction="heart"].is-active {
-    color: #d63c5e;
-    border-color: #f3c6cf;
-    background: #fff5f7;
-}
-
-.reaction-btn[data-reaction="heart"].is-active svg.reaction-icon {
-    fill: #d63c5e;
-    stroke: #d63c5e;
-}
-
-.reaction-btn[data-reaction="heart"].is-active .reaction-count {
-    color: #d63c5e;
-}
-
-.reaction-btn[data-reaction="skull"]:hover {
-    border-color: #cccccc;
-    color: #333333;
-}
-
-.reaction-btn[data-reaction="skull"].is-active {
-    border-color: #cccccc;
-    background: #f4f4f4;
-    color: #222222;
-}
-
-.reaction-btn[data-reaction="skull"].is-active .reaction-count {
-    color: #222222;
+.reaction-btn.is-active {
+    border-color: #dddddd;
+    background: #fafafa;
+    color: #555555;
 }
 
 .reaction-btn.pop .reaction-icon {
@@ -365,7 +339,7 @@ a:hover {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: currentColor;
+    background: #f0a3ae;
     pointer-events: none;
     animation: heart-particle 0.6s ease-out forwards;
 }
