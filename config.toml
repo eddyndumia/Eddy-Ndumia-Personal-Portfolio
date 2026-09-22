@@ -12,6 +12,9 @@ ShowReadingTime = true
 description = "Personal website — projects, bio, blog"
 DateFormat = "2006-01-02"
 
+[params.footer]
+text = "Emoji by [Twemoji](https://github.com/jdecked/twemoji) (CC-BY 4.0)"
+
 [params.profileMode]
 enabled = true
 title = "Eddy Ndumia"

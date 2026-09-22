@@ -283,9 +283,10 @@ a:hover {
 }
 
 .reaction-emoji {
-    display: inline-flex;
-    font-size: 16px;
-    line-height: 1;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
     filter: grayscale(1);
     opacity: 0.55;
     transition: filter 0.2s ease, opacity 0.2s ease;
