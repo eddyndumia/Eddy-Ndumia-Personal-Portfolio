@@ -1,12 +1,16 @@
 ---
-title: "Capstone — Multi-Tenant AI Agent Platform"
-summary: "A platform for businesses to deploy AI agents across channels, starting with a WhatsApp customer support agent."
+title: "Capstone — AI Lead Assistant for Real Estate Agents"
+summary: "An AI agent that handles WhatsApp and Instagram DMs for real estate agencies — qualifies leads, books viewings, hands off to a human when it should."
 date: 2026-09-22
-tags: ["ai", "agents", "python", "whatsapp"]
+tags: ["ai", "agents", "python", "whatsapp", "real-estate"]
 ---
 
-A multi-tenant platform that lets a business stand up an AI agent without building the plumbing themselves — routing, tenant isolation, conversation state — from scratch. Module 1 is a WhatsApp customer support agent, built end to end through milestone 6, with the platform growing to support more agent modules behind it.
+Capstone runs the DMs for a real estate agency. A lead messages on WhatsApp or Instagram, the agent qualifies them, answers questions off the agency's own listings, books a viewing, and hands the conversation to a real person the moment it should — a price negotiation, a complaint, anything outside its lane.
 
-**Tech stack:** Python
+An agency owner sets it up through a builder wizard: connect WhatsApp/Instagram, import listings from a spreadsheet (the import is idempotent, so re-uploading an updated sheet never duplicates anything), and the agent is live. There's an inbox where a human can take over any conversation, a leads view, and analytics that track how the agent is doing and what it's costing per client. The agent core isn't hard-locked to real estate either — industry templates exist so the same runtime can be pointed at a different vertical later.
+
+Backend is FastAPI + SQLAlchemy + Postgres. Dashboard is Next.js. Still pre-launch — working toward a first paying pilot rather than a public release. One detail I like: part of the backlog gets worked overnight by an autonomous "night shift" runner — a Claude Code session that picks up the top item, ships what it can inside a fixed window, and leaves a report for the next morning.
+
+**Tech stack:** Python (FastAPI, SQLAlchemy, Postgres), Next.js
 
 **Repo:** [capstone](https://github.com/eddyndumia/capstone) *(private)*

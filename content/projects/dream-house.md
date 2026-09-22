@@ -5,6 +5,6 @@ date: 2025-10-07
 tags: ["html", "web"]
 ---
 
-A house-search platform aimed at making it faster and more reliable to find rentals, apartments, Airbnbs, and hostels in one place.
+House hunting usually means five different sites and none of them agree on what's actually still available. Dream House puts rentals, apartments, Airbnbs, and hostels in one searchable place instead of that.
 
 **Repo:** [Dream-House-Project](https://github.com/eddyndumia/Dream-House-Project)

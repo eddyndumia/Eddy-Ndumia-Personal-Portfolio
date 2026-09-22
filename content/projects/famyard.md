@@ -5,6 +5,6 @@ date: 2025-04-29
 tags: ["html", "css", "freelance"]
 ---
 
-Freelance client site for Famyard Enterprises, covering listings, a gallery, services, and a blog — part of the freelance web development work I've kept up since 2020.
+A brochure site built for Famyard Enterprises — home, about, a gallery, a listings page, services, and a blog, all static HTML/CSS. Part of the freelance web work I've kept doing on the side since 2020, mostly small Kenyan businesses that need a real site instead of just a Facebook page.
 
 **Repo:** [famyardent](https://github.com/eddyndumia/famyardent)

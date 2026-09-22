@@ -5,7 +5,7 @@ date: 2025-06-20
 tags: ["python", "ai", "langchain", "rag"]
 ---
 
-A retrieval-augmented generation chatbot built with LangChain, so a user can drop in their own text datasets and query them conversationally instead of searching through documents by hand.
+Drop in your own text files and ask them questions instead of Ctrl+F-ing through a folder of documents. Built with LangChain: the documents get chunked and embedded, a query pulls back the relevant chunks, and the model answers from those chunks specifically — so the answer is grounded in what's actually in your data instead of whatever the model half-remembers from training.
 
 **Tech stack:** Python, LangChain
 
