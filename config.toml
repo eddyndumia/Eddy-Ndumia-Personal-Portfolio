@@ -8,7 +8,6 @@ env = "production"
 author = "Eddy Ndumia"
 defaultTheme = "light"
 disableThemeToggle = true
-ShowReadingTime = true
 description = "Personal website — projects, bio, blog"
 DateFormat = "2006-01-02"
 
