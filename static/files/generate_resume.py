@@ -112,10 +112,10 @@ def build_story():
         ("Sales ETL Pipeline", "Messy raw sales data cleaned, tested, and loaded into a quality-gated SQLite warehouse; 6 automated data-quality checks gate every run."),
         ("Customer Churn Classification", "Imbalance-aware model comparison (class weighting vs. SMOTE across 3 model types) translated into an estimated $112k business impact, not just an accuracy score."),
         ("Sales Pipeline Funnel Analytics", "6 SQL queries answering real sales-ops questions: funnel drop-off, rep and lead-source win rates, deal velocity by segment, stage-weighted revenue forecasting."),
+        ("Sales Demand Forecasting", "Seasonal-naive vs. SARIMA vs. XGBoost on a 90-day holdout; found and explained why single-seasonality SARIMA misses yearly retail spikes XGBoost catches via calendar features."),
+        ("Lead Scoring App", "Gradient-boosting lead scorer deployed as a Streamlit app, with precision/recall thresholds tied to real sales team capacity (~1.9x lift over random contact at 25% capacity)."),
         ("PropFire", "Trading timer and journal for forex traders timing entries around high-impact news releases."),
         ("RAG Chatbot", "LangChain-based retrieval-augmented chatbot for querying custom text datasets."),
-        ("GBL SuperTrading Bot", "Discord bot that posts a filtered weekly economic calendar on a schedule."),
-        ("Dream House", "House-search site unifying rentals, apartments, Airbnbs, and hostels."),
     ]
     for name, desc in projects:
         s.append(Paragraph(f"<b>{name}</b> - {desc}", styles["project"]))
@@ -123,9 +123,9 @@ def build_story():
 
     s.append(Paragraph("SKILLS", styles["section"]))
     s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Kotlin, SQL", styles["body"]))
-    s.append(Paragraph("<b>Data &amp; ML:</b> Pandas, NumPy, Scikit-learn, XGBoost, TensorFlow, LangChain / RAG", styles["body"]))
+    s.append(Paragraph("<b>Data &amp; ML:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, TensorFlow, LangChain / RAG", styles["body"]))
     s.append(Paragraph("<b>Infra:</b> Postgres, Supabase, Docker, AWS", styles["body"]))
-    s.append(Paragraph("<b>Web:</b> React, Next.js, FastAPI, WordPress", styles["body"]))
+    s.append(Paragraph("<b>Web:</b> React, Next.js, FastAPI, Streamlit, WordPress", styles["body"]))
 
     return s
 
