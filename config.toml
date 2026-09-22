@@ -8,7 +8,7 @@ env = "production"
 author = "Eddy Ndumia"
 defaultTheme = "light"
 disableThemeToggle = true
-description = "Personal website — projects, bio, blog"
+description = "Personal website — projects, bio, thoughts"
 DateFormat = "2006-01-02"
 
 [params.footer]
@@ -66,7 +66,7 @@ url = "/resume/"
 weight = 4
 
 [[menu.main]]
-identifier = "blog"
-name = "Blog"
+identifier = "thoughts"
+name = "Thoughts"
 url = "/posts/"
 weight = 5

@@ -57,81 +57,100 @@
     {{- end }}
 
     {{- if eq .Type "posts" }}
-    <div class="reactions">
-      <button class="reaction-btn" type="button" data-reaction="heart" aria-pressed="false" aria-label="React with a heart">
-        <img class="reaction-icon reaction-emoji" src="/images/emoji/heart.png" alt="" width="72" height="72" loading="lazy">
+    {{- $slug := .File.ContentBaseName }}
+    {{- $legacy := index (site.Data.reactions_legacy | default dict) $slug | default dict }}
+    <div class="reactions" data-post="{{ substr (md5 $slug) 0 12 }}"
+      data-legacy='{{ $legacy | jsonify }}'>
+      {{- range slice (dict "id" "heart" "img" "heart.png" "label" "Love it") (dict "id" "clap" "img" "clap.png" "label" "Clap") (dict "id" "laugh" "img" "rotfl.png" "label" "Haha") }}
+      <button class="reaction-btn" type="button" data-reaction="{{ .id }}" aria-pressed="false" aria-label="{{ .label }}">
+        <img class="reaction-icon reaction-emoji" src="/images/emoji/{{ .img }}" alt="" width="72" height="72" loading="lazy">
         <span class="reaction-count" data-count></span>
       </button>
-      <button class="reaction-btn" type="button" data-reaction="laugh" aria-pressed="false" aria-label="React with rolling-on-the-floor-laughing">
-        <img class="reaction-icon reaction-emoji" src="/images/emoji/rotfl.png" alt="" width="72" height="72" loading="lazy">
-        <span class="reaction-count" data-count></span>
-      </button>
+      {{- end }}
     </div>
     <script>
       (function () {
-        var ABACUS = 'https://abacus.jasoncameron.dev';
-        var NAMESPACE = 'ndumia-blog-reactions';
-        var slug = (window.location.pathname.replace(/\/+$/, '').split('/').pop() || 'home');
+        // Counts live on Abacus (free, no server of our own). Each reaction has two
+        // public counters, one for reacts and one for un-reacts, and the shown
+        // count is the difference. Each browser remembers its own state, so a
+        // person counts once, like Instagram likes.
+        var API = 'https://abacus.jasoncameron.dev';
+        var NS = 'ndumia-reactions-v2';
+        var box = document.querySelector('.reactions');
+        var post = box.getAttribute('data-post');
+        var legacy = {};
+        try { legacy = JSON.parse(box.getAttribute('data-legacy')) || {}; } catch (e) {}
+        var buttons = Array.prototype.slice.call(box.querySelectorAll('.reaction-btn'));
+        var state = { counts: {}, mine: {} };
 
-        document.querySelectorAll('.reaction-btn').forEach(function (btn) {
-          var reaction = btn.getAttribute('data-reaction');
-          var key = reaction + '_' + slug;
-          var countEl = btn.querySelector('[data-count]');
-          var reactedKey = 'reacted:' + reaction + ':' + slug;
-          var counted = false;
-          var active = false;
-          try {
-            active = localStorage.getItem(reactedKey) === '1';
-            counted = localStorage.getItem(reactedKey + ':counted') === '1';
-          } catch (e) {}
+        function mineKey(r) { return 'reaction:' + post + ':' + r; }
+        function counterKey(r, dir) { return r + '-' + dir + '-' + post; }
 
-          function setCount(n) {
-            countEl.textContent = n > 0 ? n : '';
-          }
+        function render() {
+          buttons.forEach(function (btn) {
+            var r = btn.getAttribute('data-reaction');
+            var n = state.counts[r] || 0;
+            var on = !!state.mine[r];
+            btn.querySelector('[data-count]').textContent = n > 0 ? n : '';
+            btn.classList.toggle('is-active', on);
+            btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+        }
 
-          function render() {
-            btn.classList.toggle('is-active', active);
-            btn.setAttribute('aria-pressed', active ? 'true' : 'false');
-          }
-          render();
-
-          fetch(ABACUS + '/get/' + NAMESPACE + '/' + key)
+        function getValue(key) {
+          return fetch(API + '/get/' + NS + '/' + key)
             .then(function (r) { return r.ok ? r.json() : null; })
-            .then(function (data) { if (data && typeof data.value === 'number') setCount(data.value); })
-            .catch(function () {});
+            .then(function (d) { return d && typeof d.value === 'number' ? d.value : 0; })
+            .catch(function () { return 0; });
+        }
 
-          function burst() {
-            for (var i = 0; i < 6; i++) {
-              var p = document.createElement('span');
-              p.className = 'reaction-particle';
-              var angle = (Math.PI * 2 * i) / 6;
-              p.style.setProperty('--dx', (Math.cos(angle) * 22).toFixed(1) + 'px');
-              p.style.setProperty('--dy', (Math.sin(angle) * 22).toFixed(1) + 'px');
-              btn.appendChild(p);
-              p.addEventListener('animationend', function () { this.remove(); });
-            }
-          }
-
-          btn.addEventListener('click', function () {
-            active = !active;
-            try { localStorage.setItem(reactedKey, active ? '1' : '0'); } catch (e) {}
+        buttons.forEach(function (btn) {
+          var r = btn.getAttribute('data-reaction');
+          try { state.mine[r] = localStorage.getItem(mineKey(r)) === '1'; } catch (e) {}
+          state.counts[r] = (legacy[r] || 0);
+          Promise.all([getValue(counterKey(r, 'on')), getValue(counterKey(r, 'off'))]).then(function (v) {
+            state.counts[r] = Math.max(0, (legacy[r] || 0) + v[0] - v[1]);
+            // this browser's own reaction is always reflected, even if a hit failed earlier
+            if (state.mine[r] && state.counts[r] < 1) state.counts[r] = 1;
             render();
-            if (!active) return;
+          });
+        });
+        render();
 
-            btn.classList.remove('pop');
-            void btn.offsetWidth;
-            btn.classList.add('pop');
-            burst();
+        // Facebook-style: a few copies of the emoji float up and fade out
+        function floatUp(btn) {
+          var src = btn.querySelector('.reaction-emoji').getAttribute('src');
+          for (var i = 0; i < 5; i++) {
+            var e = document.createElement('img');
+            e.src = src;
+            e.alt = '';
+            e.className = 'reaction-float';
+            e.style.setProperty('--drift', ((Math.random() - 0.5) * 50).toFixed(0) + 'px');
+            e.style.setProperty('--rise', (70 + Math.random() * 50).toFixed(0) + 'px');
+            e.style.setProperty('--size', (16 + Math.random() * 12).toFixed(0) + 'px');
+            e.style.animationDelay = (i * 70) + 'ms';
+            btn.appendChild(e);
+            e.addEventListener('animationend', function () { this.remove(); });
+          }
+        }
 
-            if (counted) return;
-            fetch(ABACUS + '/hit/' + NAMESPACE + '/' + key)
-              .then(function (r) { return r.ok ? r.json() : null; })
-              .then(function (data) {
-                if (data && typeof data.value === 'number') setCount(data.value);
-                counted = true;
-                try { localStorage.setItem(reactedKey + ':counted', '1'); } catch (e) {}
-              })
-              .catch(function () {});
+        buttons.forEach(function (btn) {
+          var r = btn.getAttribute('data-reaction');
+          btn.addEventListener('click', function () {
+            var on = !state.mine[r];
+            state.mine[r] = on;
+            state.counts[r] = Math.max(0, (state.counts[r] || 0) + (on ? 1 : -1));
+            render();
+
+            if (on) {
+              btn.classList.remove('pop');
+              void btn.offsetWidth;
+              btn.classList.add('pop');
+              floatUp(btn);
+            }
+
+            try { localStorage.setItem(mineKey(r), on ? '1' : '0'); } catch (e) {}
+            fetch(API + '/hit/' + NS + '/' + counterKey(r, on ? 'on' : 'off')).catch(function () {});
           });
         });
       })();

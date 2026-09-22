@@ -121,13 +121,16 @@
         var toggle = document.querySelector('.hamburger-toggle');
         if (!header || !toggle) return;
 
-        var THRESHOLD = 48;
+        // Only show the floating button once the real nav is well off screen,
+        // so the two are never visible at the same time.
+        var EXTRA = 200;
         var ticking = false;
 
         function update() {
-            var compact = window.scrollY > THRESHOLD;
-            header.classList.toggle('is-compact', compact);
-            if (!compact) {
+            var threshold = header.offsetTop + header.offsetHeight + EXTRA;
+            var show = window.scrollY > threshold;
+            header.classList.toggle('show-fab', show);
+            if (!show) {
                 header.classList.remove('menu-open');
                 toggle.setAttribute('aria-expanded', 'false');
             }
