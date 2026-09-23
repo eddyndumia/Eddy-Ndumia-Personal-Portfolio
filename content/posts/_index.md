@@ -1,3 +1,5 @@
 ---
 title: "Thoughts"
 ---
+
+{{< subscribe >}}

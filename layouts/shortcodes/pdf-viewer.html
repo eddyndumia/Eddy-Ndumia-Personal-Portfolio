@@ -1,0 +1,124 @@
+{{- /* In-page PDF reader. Renders every page with PDF.js so it works the same on
+       phones (where <embed> shows nothing or forces a download) and desktop.
+       Usage: {{< pdf-viewer src="files/Eddy_Ndumia_Resume.pdf" >}} */ -}}
+{{- $src := .Get "src" | absURL -}}
+<div class="pdfv" data-src="{{ $src }}">
+  <div class="pdfv-bar mono">
+    <span class="pdfv-status">loading…</span>
+    <span class="pdfv-actions">
+      <button type="button" class="pdfv-zoom" data-step="-0.15" aria-label="Zoom out">−</button>
+      <button type="button" class="pdfv-zoom" data-step="0.15" aria-label="Zoom in">+</button>
+      <a href="{{ $src }}" target="_blank" rel="noopener">open</a>
+      <a href="{{ $src }}" download>download</a>
+    </span>
+  </div>
+  <div class="pdfv-pages"></div>
+  <noscript><p><a href="{{ $src }}">Open the PDF</a></p></noscript>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  (function () {
+    var root = document.querySelector('.pdfv');
+    var pagesEl = root.querySelector('.pdfv-pages');
+    var status = root.querySelector('.pdfv-status');
+    var src = root.getAttribute('data-src');
+    var zoom = 1;
+    var doc = null;
+    var renderId = 0;
+
+    if (!window.pdfjsLib) {
+      status.innerHTML = 'couldn\'t load the viewer, <a href="' + src + '">open the PDF</a>';
+      return;
+    }
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    function render() {
+      var id = ++renderId;
+      var width = pagesEl.clientWidth;
+      var dpr = window.devicePixelRatio || 1;
+      pagesEl.innerHTML = '';
+      var chain = Promise.resolve();
+      for (var n = 1; n <= doc.numPages; n++) {
+        (function (n) {
+          chain = chain.then(function () {
+            if (id !== renderId) return;
+            return doc.getPage(n).then(function (page) {
+              var base = page.getViewport({ scale: 1 });
+              var vp = page.getViewport({ scale: (width / base.width) * zoom });
+              var wrap = document.createElement('div');
+              wrap.className = 'pdfv-page';
+              wrap.style.width = vp.width + 'px';
+              wrap.style.height = vp.height + 'px';
+              var canvas = document.createElement('canvas');
+              canvas.width = Math.floor(vp.width * dpr);
+              canvas.height = Math.floor(vp.height * dpr);
+              wrap.appendChild(canvas);
+              pagesEl.appendChild(wrap);
+              var ctx = canvas.getContext('2d');
+              return page.render({
+                canvasContext: ctx,
+                viewport: vp,
+                transform: dpr !== 1 ? [dpr, 0, 0, dpr, 0, 0] : null
+              }).promise.then(function () {
+                // keep the links in the PDF (GitHub, LinkedIn…) clickable
+                return page.getAnnotations().then(function (annots) {
+                  annots.forEach(function (a) {
+                    if (a.subtype !== 'Link' || !a.url) return;
+                    var r = vp.convertToViewportRectangle(a.rect);
+                    var link = document.createElement('a');
+                    link.href = a.url;
+                    link.target = '_blank';
+                    link.rel = 'noopener';
+                    link.className = 'pdfv-link';
+                    link.style.left = Math.min(r[0], r[2]) + 'px';
+                    link.style.top = Math.min(r[1], r[3]) + 'px';
+                    link.style.width = Math.abs(r[2] - r[0]) + 'px';
+                    link.style.height = Math.abs(r[3] - r[1]) + 'px';
+                    wrap.appendChild(link);
+                  });
+                });
+              });
+            });
+          });
+        })(n);
+      }
+      status.textContent = doc.numPages + (doc.numPages === 1 ? ' page' : ' pages') +
+        (zoom !== 1 ? ' · ' + Math.round(zoom * 100) + '%' : '');
+    }
+
+    // fetch the whole file ourselves: it's small, and it sidesteps PDF.js range
+    // requests, which some static hosts answer badly
+    fetch(src).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.arrayBuffer();
+    }).then(function (buf) {
+      return pdfjsLib.getDocument({ data: new Uint8Array(buf) }).promise;
+    }).then(function (d) {
+      doc = d;
+      render();
+    }).catch(function () {
+      status.innerHTML = 'couldn\'t load it here, <a href="' + src + '">open the PDF</a>';
+    });
+
+    root.querySelectorAll('.pdfv-zoom').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (!doc) return;
+        zoom = Math.min(2.5, Math.max(0.55, zoom + parseFloat(btn.getAttribute('data-step'))));
+        render();
+      });
+    });
+
+    var lastWidth = pagesEl.clientWidth;
+    var t;
+    window.addEventListener('resize', function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        if (doc && pagesEl.clientWidth !== lastWidth) {
+          lastWidth = pagesEl.clientWidth;
+          render();
+        }
+      }, 150);
+    });
+  })();
+</script>

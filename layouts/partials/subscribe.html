@@ -1,0 +1,13 @@
+{{- /* Email signup for new posts. Subscribers live on Buttondown; the deploy
+       workflow emails them when a new post goes live (tools/notify_subscribers.py).
+       Renders nothing until params.buttondownUser is set in config.toml. */ -}}
+{{- with site.Params.buttondownUser }}
+<form class="subscribe" action="https://buttondown.com/api/emails/embed-subscribe/{{ . }}" method="post" target="_blank">
+  <p class="subscribe-note">Get an email when I post something new. Nothing else, unsubscribe whenever.</p>
+  <div class="subscribe-row">
+    <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
+    <input type="hidden" name="tag" value="site">
+    <button type="submit">subscribe</button>
+  </div>
+</form>
+{{- end }}

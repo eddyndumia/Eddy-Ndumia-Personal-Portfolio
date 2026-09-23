@@ -10,6 +10,8 @@ defaultTheme = "light"
 disableThemeToggle = true
 description = "Personal website — projects, bio, thoughts"
 DateFormat = "2006-01-02"
+# Buttondown username for the "get new posts by email" form. Empty = form hidden.
+buttondownUser = ""
 
 [params.footer]
 text = "Emoji by [Twemoji](https://github.com/jdecked/twemoji) (CC-BY 4.0)"
@@ -70,3 +72,9 @@ identifier = "thoughts"
 name = "Thoughts"
 url = "posts/"
 weight = 5
+
+[[menu.main]]
+identifier = "contact"
+name = "Contact"
+url = "contact/"
+weight = 6
