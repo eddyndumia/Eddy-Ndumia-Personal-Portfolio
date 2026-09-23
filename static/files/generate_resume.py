@@ -26,7 +26,7 @@ styles = {
     "name": ParagraphStyle("name", fontName="Times-Bold", fontSize=24, leading=28, spaceAfter=2),
     "tagline": ParagraphStyle("tagline", fontName="Helvetica", fontSize=10.5, leading=13, spaceAfter=2),
     "contact": ParagraphStyle("contact", fontName="Helvetica", fontSize=9, leading=12, textColor="#333333", spaceAfter=6),
-    "section": ParagraphStyle("section", fontName="Helvetica-Bold", fontSize=10, leading=13, spaceBefore=6, spaceAfter=2, textColor="#111111"),
+    "section": ParagraphStyle("section", fontName="Helvetica-Bold", fontSize=10, leading=13, spaceBefore=5, spaceAfter=2, textColor="#111111"),
     "body": ParagraphStyle("body", fontName="Helvetica", fontSize=9.2, leading=11.8, spaceAfter=2),
     "role": ParagraphStyle("role", fontName="Helvetica-Bold", fontSize=9.4, leading=11.8, spaceAfter=0),
     "date": ParagraphStyle("date", fontName="Helvetica-Oblique", fontSize=8.5, leading=10.3, spaceAfter=2, textColor="#444444"),
@@ -61,7 +61,7 @@ def build_story():
 
     s.append(Paragraph("EXPERIENCE", styles["section"]))
 
-    s.append(Paragraph("Independent Builder - PesaScore, Capstone, Chukua &amp; Kwetu", styles["role"]))
+    s.append(Paragraph("Independent Builder - PesaScore, Capstone, Chukua, Kwetu &amp; Nunuachai", styles["role"]))
     s.append(Paragraph("2026 - Present", styles["date"]))
     s.append(Paragraph(
         "- PesaScore: alt-data credit scoring from M-Pesa statements. Parser tested on a real 7,400-transaction "
@@ -82,20 +82,22 @@ def build_story():
         "- Kwetu: Flutter app for people abroad to buy electronics for family in Kenya, paid in USDT/USDC.",
         styles["bullet"]
     ))
+    s.append(Paragraph(
+        "- Nunuachai: tip pages for Kenyan creators - fans pay by M-Pesa PIN prompt, settled straight to the creator.",
+        styles["bullet"]
+    ))
 
     s.append(Paragraph("Freelance Web Developer - Kenya", styles["role"]))
     s.append(Paragraph("2020 - Present", styles["date"]))
     s.append(Paragraph(
-        "- Responsive, data-driven sites and custom full-stack builds for small businesses - WordPress and "
-        "code-first, depending on the client.",
+        "- Responsive, data-driven sites and custom full-stack builds for small businesses, in WordPress or code.",
         styles["bullet"]
     ))
 
     s.append(Paragraph("Project Lead, Web Housing Management System - JKUAT", styles["role"]))
     s.append(Paragraph("Sept - Dec 2022", styles["date"]))
     s.append(Paragraph(
-        "- Led a university team building a cloud-backed system for tenants, properties, and admin tasks - auth, "
-        "data tracking, reporting dashboards.",
+        "- Led a university team building a cloud-backed system for tenants, properties and admin, with dashboards.",
         styles["bullet"]
     ))
 
@@ -121,7 +123,7 @@ def build_story():
         ("Sales ETL Pipeline", "Messy raw sales data cleaned, tested, and loaded into a quality-gated SQLite warehouse; 6 automated data-quality checks gate every run."),
         ("Customer Churn Classification", "Imbalance-aware model comparison (class weighting vs. SMOTE across 3 model types) translated into an estimated $112k business impact, not just an accuracy score."),
         ("Sales Pipeline Funnel Analytics", "6 SQL queries answering real sales-ops questions: funnel drop-off, rep and lead-source win rates, deal velocity by segment, stage-weighted revenue forecasting."),
-        ("Sales Demand Forecasting", "Seasonal-naive vs. SARIMA vs. XGBoost on a 90-day holdout; found and explained why single-seasonality SARIMA misses yearly retail spikes XGBoost catches via calendar features."),
+        ("Sales Demand Forecasting", "Seasonal-naive vs. SARIMA vs. XGBoost on a 90-day holdout; XGBoost's calendar features catch the yearly retail spikes SARIMA misses."),
         ("Lead Scoring App", "Gradient-boosting lead scorer deployed as a Streamlit app, with precision/recall thresholds tied to real sales team capacity (~1.9x lift over random contact at 25% capacity)."),
         ("PropFire", "Trading timer and journal for forex traders timing entries around high-impact news releases."),
         ("RAG Chatbot", "LangChain-based retrieval-augmented chatbot for querying custom text datasets."),
@@ -134,7 +136,7 @@ def build_story():
     s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, Kotlin, SQL", styles["body"]))
     s.append(Paragraph("<b>Data &amp; ML:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, TensorFlow, LangChain / RAG", styles["body"]))
     s.append(Paragraph("<b>Infra:</b> Postgres, PostGIS, Supabase, Docker, AWS", styles["body"]))
-    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Flutter, FastAPI, Streamlit, WordPress", styles["body"]))
+    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Astro, Flutter, FastAPI, Streamlit, WordPress", styles["body"]))
 
     return s
 
@@ -143,7 +145,7 @@ def main():
     doc = SimpleDocTemplate(
         OUT, pagesize=letter,
         leftMargin=0.75 * inch, rightMargin=0.75 * inch,
-        topMargin=0.4 * inch, bottomMargin=0.25 * inch,
+        topMargin=0.35 * inch, bottomMargin=0.25 * inch,
         title="Eddy Ndumia - Resume",
     )
     doc.build(build_story())
