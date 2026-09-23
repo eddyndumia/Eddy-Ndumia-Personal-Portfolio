@@ -593,3 +593,48 @@ a:hover {
     background: var(--accent);
     border-color: var(--accent);
 }
+
+/* ---------- buy me a coffee ---------- */
+.coffee {
+    margin: 40px 0 8px;
+    padding: 18px 20px;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.coffee p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--secondary);
+    flex: 1 1 260px;
+}
+
+.coffee-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+    font-size: 12px;
+    padding: 8px 14px;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    background: #ffdd00;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-decoration: none;
+}
+
+.coffee-btn:hover {
+    background: #ffe94d;
+}
+
+.coffee-icon svg {
+    width: 12px;
+    height: 16px;
+    display: block;
+}

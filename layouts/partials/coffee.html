@@ -1,0 +1,14 @@
+{{- /* "Buy me a coffee" note at the end of every post.
+       Renders nothing until params.buyMeACoffee (the buymeacoffee.com username) is set in config.toml.
+       Hide it on one post with `coffee: false` in that post's front matter. */ -}}
+{{- with site.Params.buyMeACoffee }}
+{{- if ne $.Params.coffee false }}
+<aside class="coffee">
+  <p>If this was worth your time, you can buy me a coffee. It keeps the late nights going.</p>
+  <a class="coffee-btn" href="https://buymeacoffee.com/{{ . }}" target="_blank" rel="noopener">
+    <span class="coffee-icon" aria-hidden="true">{{ partial "svg.html" (dict "name" "buymeacoffee") }}</span>
+    buy me a coffee
+  </a>
+</aside>
+{{- end }}
+{{- end }}

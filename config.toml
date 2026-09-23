@@ -12,6 +12,8 @@ description = "Personal website — projects, bio, thoughts"
 DateFormat = "2006-01-02"
 # Buttondown username for the "get new posts by email" form. Empty = form hidden.
 buttondownUser = ""
+# buymeacoffee.com username for the note at the end of every post. Empty = hidden.
+buyMeACoffee = ""
 
 [params.footer]
 text = "Emoji by [Twemoji](https://github.com/jdecked/twemoji) (CC-BY 4.0)"
