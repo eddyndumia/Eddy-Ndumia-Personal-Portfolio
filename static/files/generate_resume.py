@@ -64,8 +64,8 @@ def build_story():
     s.append(Paragraph("Independent Builder - PesaScore, Capstone, Chukua &amp; Kwetu", styles["role"]))
     s.append(Paragraph("2026 - Present", styles["date"]))
     s.append(Paragraph(
-        "- PesaScore: alt-data credit scoring from M-Pesa statements - consumer app, lender dashboard, real PDF "
-        "parsing and scoring, Supabase Auth + Postgres Row-Level Security for tenant isolation.",
+        "- PesaScore: alt-data credit scoring from M-Pesa statements. Parser tested on a real 7,400-transaction "
+        "statement, explainable 300-850 scorecard, borrower-controlled consent, Postgres RLS tenant isolation.",
         styles["bullet"]
     ))
     s.append(Paragraph(
