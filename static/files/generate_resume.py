@@ -30,8 +30,8 @@ styles = {
     "body": ParagraphStyle("body", fontName="Helvetica", fontSize=9.2, leading=11.8, spaceAfter=2),
     "role": ParagraphStyle("role", fontName="Helvetica-Bold", fontSize=9.4, leading=11.8, spaceAfter=0),
     "date": ParagraphStyle("date", fontName="Helvetica-Oblique", fontSize=8.5, leading=10.3, spaceAfter=2, textColor="#444444"),
-    "bullet": ParagraphStyle("bullet", fontName="Helvetica", fontSize=9.0, leading=11.6, leftIndent=10, spaceAfter=1.5),
-    "project": ParagraphStyle("project", fontName="Helvetica", fontSize=8.8, leading=11.3, spaceAfter=1.5),
+    "bullet": ParagraphStyle("bullet", fontName="Helvetica", fontSize=9.0, leading=11.3, leftIndent=10, spaceAfter=1.5),
+    "project": ParagraphStyle("project", fontName="Helvetica", fontSize=8.8, leading=11.0, spaceAfter=1.5),
     "note": ParagraphStyle("note", fontName="Helvetica-Oblique", fontSize=8.5, leading=11, spaceAfter=2, textColor="#444444"),
 }
 
@@ -61,7 +61,7 @@ def build_story():
 
     s.append(Paragraph("EXPERIENCE", styles["section"]))
 
-    s.append(Paragraph("Independent Builder - PesaScore, Capstone &amp; Chukua", styles["role"]))
+    s.append(Paragraph("Independent Builder - PesaScore, Capstone, Chukua &amp; Kwetu", styles["role"]))
     s.append(Paragraph("2026 - Present", styles["date"]))
     s.append(Paragraph(
         "- PesaScore: alt-data credit scoring from M-Pesa statements - consumer app, lender dashboard, real PDF "
@@ -76,6 +76,10 @@ def build_story():
     s.append(Paragraph(
         "- Chukua: Flutter app for giving away free stuff nearby, with AI value estimates and M-Pesa claim fees. "
         "Supabase + PostGIS, atomic claim holds, Row-Level Security keeping givers' phones private.",
+        styles["bullet"]
+    ))
+    s.append(Paragraph(
+        "- Kwetu: Flutter app for people abroad to buy electronics for family in Kenya, paid in USDT/USDC.",
         styles["bullet"]
     ))
 
@@ -139,7 +143,7 @@ def main():
     doc = SimpleDocTemplate(
         OUT, pagesize=letter,
         leftMargin=0.75 * inch, rightMargin=0.75 * inch,
-        topMargin=0.4 * inch, bottomMargin=0.3 * inch,
+        topMargin=0.4 * inch, bottomMargin=0.25 * inch,
         title="Eddy Ndumia - Resume",
     )
     doc.build(build_story())
