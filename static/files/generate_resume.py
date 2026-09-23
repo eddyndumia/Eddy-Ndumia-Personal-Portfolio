@@ -61,7 +61,7 @@ def build_story():
 
     s.append(Paragraph("EXPERIENCE", styles["section"]))
 
-    s.append(Paragraph("Independent Builder - PesaScore &amp; Capstone", styles["role"]))
+    s.append(Paragraph("Independent Builder - PesaScore, Capstone &amp; Chukua", styles["role"]))
     s.append(Paragraph("2026 - Present", styles["date"]))
     s.append(Paragraph(
         "- PesaScore: alt-data credit scoring from M-Pesa statements - consumer app, lender dashboard, real PDF "
@@ -71,6 +71,11 @@ def build_story():
     s.append(Paragraph(
         "- Capstone: AI agent handling WhatsApp/Instagram DMs for real estate agencies - qualifies leads, books "
         "viewings, hands off to a human when it should. FastAPI + Postgres backend, Next.js dashboard.",
+        styles["bullet"]
+    ))
+    s.append(Paragraph(
+        "- Chukua: Flutter app for giving away free stuff nearby, with AI value estimates and M-Pesa claim fees. "
+        "Supabase + PostGIS, atomic claim holds, Row-Level Security keeping givers' phones private.",
         styles["bullet"]
     ))
 
@@ -122,10 +127,10 @@ def build_story():
     s.append(Paragraph("Full write-ups and repo links: ndumia.netlify.app/projects", styles["note"]))
 
     s.append(Paragraph("SKILLS", styles["section"]))
-    s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Kotlin, SQL", styles["body"]))
+    s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, Kotlin, SQL", styles["body"]))
     s.append(Paragraph("<b>Data &amp; ML:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, TensorFlow, LangChain / RAG", styles["body"]))
-    s.append(Paragraph("<b>Infra:</b> Postgres, Supabase, Docker, AWS", styles["body"]))
-    s.append(Paragraph("<b>Web:</b> React, Next.js, FastAPI, Streamlit, WordPress", styles["body"]))
+    s.append(Paragraph("<b>Infra:</b> Postgres, PostGIS, Supabase, Docker, AWS", styles["body"]))
+    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Flutter, FastAPI, Streamlit, WordPress", styles["body"]))
 
     return s
 
@@ -134,7 +139,7 @@ def main():
     doc = SimpleDocTemplate(
         OUT, pagesize=letter,
         leftMargin=0.75 * inch, rightMargin=0.75 * inch,
-        topMargin=0.45 * inch, bottomMargin=0.4 * inch,
+        topMargin=0.4 * inch, bottomMargin=0.3 * inch,
         title="Eddy Ndumia - Resume",
     )
     doc.build(build_story())
