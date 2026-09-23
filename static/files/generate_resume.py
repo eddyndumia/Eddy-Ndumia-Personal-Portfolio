@@ -21,6 +21,8 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, HRFlowable
 from reportlab.pdfbase.pdfmetrics import stringWidth
 
 OUT = "Eddy_Ndumia_Resume.pdf"
+# Live site. Change here when the portfolio moves to its own domain.
+SITE = "https://eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio/"
 
 styles = {
     "name": ParagraphStyle("name", fontName="Times-Bold", fontSize=24, leading=28, spaceAfter=2),
@@ -43,9 +45,11 @@ def rule():
 def build_story():
     s = []
     s.append(Paragraph("Eddy Ndumia", styles["name"]))
-    s.append(Paragraph("AI enthusiast &amp; data engineer (AWS) - Mathematics &amp; Computer Science, JKUAT", styles["tagline"]))
+    s.append(Paragraph("AI enthusiast &amp; data engineer (AWS) - Mathematics &amp; Computer Science, JKUAT - Nairobi, Kenya", styles["tagline"]))
     s.append(Paragraph(
-        "ndumia.netlify.app | github.com/eddyndumia | linkedin.com/in/eddyndumia | Nairobi, Kenya",
+        f'<link href="{SITE}">eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio</link> | '
+        '<link href="https://github.com/eddyndumia">github.com/eddyndumia</link> | '
+        '<link href="https://www.linkedin.com/in/eddyndumia/">linkedin.com/in/eddyndumia</link>',
         styles["contact"]
     ))
     s.append(rule())
@@ -130,7 +134,7 @@ def build_story():
     ]
     for name, desc in projects:
         s.append(Paragraph(f"<b>{name}</b> - {desc}", styles["project"]))
-    s.append(Paragraph("Full write-ups and repo links: ndumia.netlify.app/projects", styles["note"]))
+    s.append(Paragraph(f'Full write-ups and repo links: <link href="{SITE}projects/">eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio/projects</link>', styles["note"]))
 
     s.append(Paragraph("SKILLS", styles["section"]))
     s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, Kotlin, SQL", styles["body"]))
