@@ -65,7 +65,7 @@ def build_story():
     s.append(Paragraph("2026 - Present", styles["date"]))
     s.append(Paragraph(
         "- PesaScore: alt-data credit scoring from M-Pesa statements. Parser tested on a real 7,400-transaction "
-        "statement, explainable 300-850 scorecard, borrower-controlled consent, Postgres RLS tenant isolation.",
+        "statement, explainable 300-850 scorecard, borrower consent, Postgres RLS. Flutter app, FastAPI, lender web portal.",
         styles["bullet"]
     ))
     s.append(Paragraph(
