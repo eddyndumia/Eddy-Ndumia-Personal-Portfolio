@@ -58,20 +58,11 @@ def build_story():
     s.append(Paragraph(
         "Mathematics and Computer Science student at JKUAT, finishing December 2026. I've built websites and "
         "full-stack apps for small businesses since 2020, and I do data engineering on AWS: cleaning messy data "
-        "and building pipelines that don't break. Currently building Chukua, a giveaway app for Nairobi.",
+        "and building pipelines that don't break. Most interested in finance, crypto and AI.",
         styles["body"]
     ))
 
     s.append(Paragraph("EXPERIENCE", styles["section"]))
-
-    s.append(Paragraph("Builder - Chukua", styles["role"]))
-    s.append(Paragraph("2026 - Present", styles["date"]))
-    s.append(Paragraph(
-        "- Flutter app for giving away things you don't need to people nearby, with M-Pesa claim fees. "
-        "Supabase + PostGIS, atomic claim holds, all rules enforced in SQL, Row-Level Security keeping "
-        "givers' phone numbers private until a claim is paid.",
-        styles["bullet"]
-    ))
 
     s.append(Paragraph("Freelance Web Developer - Kenya", styles["role"]))
     s.append(Paragraph("2020 - Present", styles["date"]))
