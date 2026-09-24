@@ -65,7 +65,7 @@ def build_story():
 
     s.append(Paragraph("EXPERIENCE", styles["section"]))
 
-    s.append(Paragraph("Independent Builder - PesaScore, Capstone, Chukua, Kwetu &amp; Nunuachai", styles["role"]))
+    s.append(Paragraph("Independent Builder - PesaScore, Capstone &amp; Chukua", styles["role"]))
     s.append(Paragraph("2026 - Present", styles["date"]))
     s.append(Paragraph(
         "- PesaScore: alt-data credit scoring from M-Pesa statements. Parser tested on a real 7,400-transaction "
@@ -82,65 +82,40 @@ def build_story():
         "Supabase + PostGIS, atomic claim holds, Row-Level Security keeping givers' phones private.",
         styles["bullet"]
     ))
-    s.append(Paragraph(
-        "- Kwetu: Flutter app for people abroad to buy electronics for family in Kenya, paid in USDT/USDC.",
-        styles["bullet"]
-    ))
-    s.append(Paragraph(
-        "- Nunuachai: tip pages for Kenyan creators - fans pay by M-Pesa PIN prompt, settled straight to the creator.",
-        styles["bullet"]
-    ))
 
     s.append(Paragraph("Freelance Web Developer - Kenya", styles["role"]))
     s.append(Paragraph("2020 - Present", styles["date"]))
     s.append(Paragraph(
-        "- Responsive, data-driven sites and custom full-stack builds for small businesses, in WordPress or code.",
+        "- Famyard Enterprises (land sales, Nyeri/Laikipia): rebuilt their site in Next.js on Cloudflare Pages, plus a "
+        "custom CMS (Postgres, role-based login, inquiries inbox) so staff manage plots and content without WordPress.",
+        styles["bullet"]
+    ))
+    s.append(Paragraph(
+        "- Sites and full-stack builds for other small businesses, in WordPress or code.",
         styles["bullet"]
     ))
 
-    s.append(Paragraph("Project Lead, Web Housing Management System - JKUAT", styles["role"]))
-    s.append(Paragraph("Sept - Dec 2022", styles["date"]))
-    s.append(Paragraph(
-        "- Led a university team building a cloud-backed system for tenants, properties and admin, with dashboards.",
-        styles["bullet"]
-    ))
 
     s.append(Paragraph("EDUCATION &amp; TRAINING", styles["section"]))
     s.append(Paragraph("B.Sc. Mathematics and Computer Science - JKUAT", styles["role"]))
     s.append(Paragraph("2020 - 2026 (graduating December 2026)", styles["date"]))
     s.append(Paragraph("ALX / Holberton Software Engineering Program", styles["role"]))
     s.append(Paragraph("2023 - low-level programming in C, algorithms, Linux/DevOps", styles["date"]))
-    s.append(Paragraph("HackRU IX Hackathon", styles["role"]))
-    s.append(Paragraph(
-        "2022 - patient-connection platform for the NY-Presbyterian/Morgan Stanley Children's Hospital Challenge",
-        styles["date"]
-    ))
-    s.append(Paragraph("Certifications", styles["role"]))
-    s.append(Paragraph(
-        "Data Science with Python (JKUAT) | Cisco Networking Level 1 (JKUAT) | Web &amp; Mobile Application "
-        "Development (eMobilis Technology Training Institute)",
-        styles["date"]
-    ))
 
     s.append(Paragraph("SELECTED PROJECTS", styles["section"]))
     projects = [
         ("Sales ETL Pipeline", "Messy raw sales data cleaned, tested, and loaded into a quality-gated SQLite warehouse; 6 automated data-quality checks gate every run."),
-        ("Customer Churn Classification", "Imbalance-aware model comparison (class weighting vs. SMOTE across 3 model types) translated into an estimated $112k business impact, not just an accuracy score."),
-        ("Sales Pipeline Funnel Analytics", "6 SQL queries answering real sales-ops questions: funnel drop-off, rep and lead-source win rates, deal velocity by segment, stage-weighted revenue forecasting."),
         ("Sales Demand Forecasting", "Seasonal-naive vs. SARIMA vs. XGBoost on a 90-day holdout; XGBoost's calendar features catch the yearly retail spikes SARIMA misses."),
-        ("Lead Scoring App", "Gradient-boosting lead scorer deployed as a Streamlit app, with precision/recall thresholds tied to real sales team capacity (~1.9x lift over random contact at 25% capacity)."),
-        ("PropFire", "Trading timer and journal for forex traders timing entries around high-impact news releases."),
-        ("RAG Chatbot", "LangChain-based retrieval-augmented chatbot for querying custom text datasets."),
     ]
     for name, desc in projects:
         s.append(Paragraph(f"<b>{name}</b> - {desc}", styles["project"]))
     s.append(Paragraph(f'Full write-ups and repo links: <link href="{SITE}projects/">eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio/projects</link>', styles["note"]))
 
     s.append(Paragraph("SKILLS", styles["section"]))
-    s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, Kotlin, SQL", styles["body"]))
-    s.append(Paragraph("<b>Data &amp; ML:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, TensorFlow, LangChain / RAG", styles["body"]))
+    s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, SQL", styles["body"]))
+    s.append(Paragraph("<b>Data &amp; ML:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, LLM agents (Claude API)", styles["body"]))
     s.append(Paragraph("<b>Infra:</b> Postgres, PostGIS, Supabase, Docker, AWS", styles["body"]))
-    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Astro, Flutter, FastAPI, Streamlit, WordPress", styles["body"]))
+    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Flutter, FastAPI, WordPress", styles["body"]))
 
     return s
 
