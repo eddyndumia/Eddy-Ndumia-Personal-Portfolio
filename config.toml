@@ -21,7 +21,7 @@ text = "Emoji by [Twemoji](https://github.com/jdecked/twemoji) (CC-BY 4.0)"
 [params.profileMode]
 enabled = true
 title = "Eddy Ndumia"
-subtitle = "Hi! I'm a Mathematics and Computer Science student at JKUAT, graduating December 2026. I'm an AI enthusiast with data engineering experience on AWS — I like turning raw, messy data into pipelines and models that actually hold up in production. Right now that means building PesaScore, a fintech platform that scores creditworthiness from alternative data (like M-Pesa statements) instead of a traditional credit bureau. When I'm not building, I'm usually deep in a terminal chasing down an edge case nobody asked about."
+subtitle = "Hi, I'm Eddy. I'm finishing a degree in Maths and Computer Science at JKUAT this December. I've been building websites for small businesses in Kenya since 2020, and lately I do more data work on AWS, the kind where you clean up messy data and build pipelines that don't fall over. Right now I'm building Chukua, an app where people in Nairobi give away things they don't need to someone nearby. I write about what I'm building and what goes wrong along the way, it's all under Thoughts."
 imageUrl = "images/profile.jpg"
 imageWidth = 120
 imageHeight = 120

@@ -45,7 +45,7 @@ def rule():
 def build_story():
     s = []
     s.append(Paragraph("Eddy Ndumia", styles["name"]))
-    s.append(Paragraph("AI enthusiast &amp; data engineer (AWS) - Mathematics &amp; Computer Science, JKUAT - Nairobi, Kenya", styles["tagline"]))
+    s.append(Paragraph("Developer and data engineer (AWS) - Maths &amp; Computer Science, JKUAT - Nairobi, Kenya", styles["tagline"]))
     s.append(Paragraph(
         f'<link href="{SITE}">eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio</link> | '
         '<link href="https://github.com/eddyndumia">github.com/eddyndumia</link> | '
@@ -56,30 +56,20 @@ def build_story():
 
     s.append(Paragraph("SUMMARY", styles["section"]))
     s.append(Paragraph(
-        "AI enthusiast with data engineering experience on AWS, turning raw, messy data into pipelines and models "
-        "that hold up in production. Currently building PesaScore, a fintech platform that scores creditworthiness "
-        "from alternative data (M-Pesa statements) instead of a traditional credit bureau, and Capstone, an AI lead "
-        "assistant for real estate agents. Freelance web developer since 2020.",
+        "Mathematics and Computer Science student at JKUAT, finishing December 2026. I've built websites and "
+        "full-stack apps for small businesses since 2020, and I do data engineering on AWS: cleaning messy data "
+        "and building pipelines that don't break. Currently building Chukua, a giveaway app for Nairobi.",
         styles["body"]
     ))
 
     s.append(Paragraph("EXPERIENCE", styles["section"]))
 
-    s.append(Paragraph("Independent Builder - PesaScore, Capstone &amp; Chukua", styles["role"]))
+    s.append(Paragraph("Builder - Chukua", styles["role"]))
     s.append(Paragraph("2026 - Present", styles["date"]))
     s.append(Paragraph(
-        "- PesaScore: alt-data credit scoring from M-Pesa statements. Parser tested on a real 7,400-transaction "
-        "statement, explainable 300-850 scorecard, borrower consent, Postgres RLS. Flutter app, FastAPI, lender web portal.",
-        styles["bullet"]
-    ))
-    s.append(Paragraph(
-        "- Capstone: AI agent handling WhatsApp/Instagram DMs for real estate agencies - qualifies leads, books "
-        "viewings, hands off to a human when it should. FastAPI + Postgres backend, Next.js dashboard.",
-        styles["bullet"]
-    ))
-    s.append(Paragraph(
-        "- Chukua: Flutter app for giving away free stuff nearby, with AI value estimates and M-Pesa claim fees. "
-        "Supabase + PostGIS, atomic claim holds, Row-Level Security keeping givers' phones private.",
+        "- Flutter app for giving away things you don't need to people nearby, with M-Pesa claim fees. "
+        "Supabase + PostGIS, atomic claim holds, all rules enforced in SQL, Row-Level Security keeping "
+        "givers' phone numbers private until a claim is paid.",
         styles["bullet"]
     ))
 
@@ -113,9 +103,9 @@ def build_story():
 
     s.append(Paragraph("SKILLS", styles["section"]))
     s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, SQL", styles["body"]))
-    s.append(Paragraph("<b>Data &amp; ML:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, LLM agents (Claude API)", styles["body"]))
+    s.append(Paragraph("<b>Data:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, Airflow", styles["body"]))
     s.append(Paragraph("<b>Infra:</b> Postgres, PostGIS, Supabase, Docker, AWS", styles["body"]))
-    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Flutter, FastAPI, WordPress", styles["body"]))
+    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Flutter, WordPress", styles["body"]))
 
     return s
 
