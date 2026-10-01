@@ -64,6 +64,20 @@ def build_story():
 
     s.append(Paragraph("EXPERIENCE", styles["section"]))
 
+    s.append(Paragraph("Builder - Chukua", styles["role"]))
+    s.append(Paragraph("2026 - Present", styles["date"]))
+    s.append(Paragraph(
+        "- Flutter app for giving away things you don't need to people nearby, with M-Pesa claim fees. "
+        "Supabase + PostGIS, atomic claim holds, all rules enforced in SQL, Row-Level Security keeping "
+        "givers' phone numbers private until a claim is paid.",
+        styles["bullet"]
+    ))
+    s.append(Paragraph(
+        "- Live as a first release (v1.0.0, October 2026): signed Android app, email-code sign-in, free claims "
+        'for the Nairobi pilot. <link href="https://chukua.ndumiaeddy8.workers.dev">chukua.ndumiaeddy8.workers.dev</link>',
+        styles["bullet"]
+    ))
+
     s.append(Paragraph("Freelance Web Developer - Kenya", styles["role"]))
     s.append(Paragraph("2020 - Present", styles["date"]))
     s.append(Paragraph(
@@ -85,6 +99,7 @@ def build_story():
 
     s.append(Paragraph("SELECTED PROJECTS", styles["section"]))
     projects = [
+        ("Chukua", "Free things from people near you in Nairobi. Flutter + Supabase, live on Android since October 2026."),
         ("Sales ETL Pipeline", "Messy raw sales data cleaned, tested, and loaded into a quality-gated SQLite warehouse; 6 automated data-quality checks gate every run."),
         ("Sales Demand Forecasting", "Seasonal-naive vs. SARIMA vs. XGBoost on a 90-day holdout; XGBoost's calendar features catch the yearly retail spikes SARIMA misses."),
     ]
