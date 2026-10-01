@@ -1,6 +1,6 @@
 ---
 title: "Chukua Is Out"
-date: 2026-10-01T19:00:00+03:00
+date: 2026-10-01T12:00:00+03:00
 ---
 
 A week ago I wrote about how Nairobi is full of free stuff nobody can find. The sofa outside the gate after a move, the cot in the store, the twenty office chairs nobody knows what to do with. And somebody a few kilometres away who needs exactly that thing.
