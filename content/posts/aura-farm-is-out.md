@@ -1,6 +1,6 @@
 ---
 title: "Aura Farm Is Out"
-date: 2026-10-03T00:30:00+03:00
+date: 2026-10-02T21:00:00+03:00
 ---
 
 I made a game. It's called Aura Farm and it's probably the most brainrot thing I've ever built.
