@@ -64,6 +64,20 @@ def build_story():
 
     s.append(Paragraph("EXPERIENCE", styles["section"]))
 
+    s.append(Paragraph("Builder - Aura Farm", styles["role"]))
+    s.append(Paragraph("2026 - Present", styles["date"]))
+    s.append(Paragraph(
+        "- Brainrot arcade game in TypeScript on a plain canvas, one codebase for web and Android (Capacitor). "
+        "AdMob with rewarded-first placements and capped interstitials, mixed-audience age gate with child-directed ads "
+        "for under-13s (Play Families policy), adaptive rendering for low-end phones.",
+        styles["bullet"]
+    ))
+    s.append(Paragraph(
+        "- Live October 2026 (v1.1.1): web game and signed Android APK, Google Play closed test running. "
+        '<link href="https://aura-farm.ndumiaeddy8.workers.dev">aura-farm.ndumiaeddy8.workers.dev</link>',
+        styles["bullet"]
+    ))
+
     s.append(Paragraph("Builder - Chukua", styles["role"]))
     s.append(Paragraph("2026 - Present", styles["date"]))
     s.append(Paragraph(
@@ -99,6 +113,7 @@ def build_story():
 
     s.append(Paragraph("SELECTED PROJECTS", styles["section"]))
     projects = [
+        ("Aura Farm", "Brainrot arcade game, catch the Ws and evolve into Tung Tung Tung Sahur. TypeScript + Capacitor, live on web and Android."),
         ("Chukua", "Free things from people near you in Nairobi. Flutter + Supabase, live on Android since October 2026."),
         ("Sales ETL Pipeline", "Messy raw sales data cleaned, tested, and loaded into a quality-gated SQLite warehouse; 6 automated data-quality checks gate every run."),
         ("Sales Demand Forecasting", "Seasonal-naive vs. SARIMA vs. XGBoost on a 90-day holdout; XGBoost's calendar features catch the yearly retail spikes SARIMA misses."),
@@ -111,7 +126,7 @@ def build_story():
     s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, SQL", styles["body"]))
     s.append(Paragraph("<b>Data:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, Airflow", styles["body"]))
     s.append(Paragraph("<b>Infra:</b> Postgres, PostGIS, Supabase, Docker, AWS", styles["body"]))
-    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Flutter, WordPress", styles["body"]))
+    s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Flutter, Capacitor, WordPress", styles["body"]))
 
     return s
 
