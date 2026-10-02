@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-10-02 to keep the list to shipped work; delete this line to bring it back
 title: "Sales Pipeline Funnel Analytics"
 summary: "SQL-driven B2B sales pipeline analysis: funnel drop-off, rep and lead-source win rates, deal velocity by segment, stage-weighted revenue forecasting."
 date: 2026-09-22

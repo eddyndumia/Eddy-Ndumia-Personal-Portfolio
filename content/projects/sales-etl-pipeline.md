@@ -1,14 +1,14 @@
 ---
 title: "Sales ETL Pipeline"
-summary: "End-to-end batch ETL: a deliberately messy raw sales export cleaned, tested, and loaded into a quality-gated SQLite warehouse."
+summary: "Batch ETL that takes a messy sales export, cleans and tests it, and loads it into a SQLite warehouse that refuses bad data."
 date: 2026-09-22
 tags: ["python", "sql", "data-engineering", "pandas"]
 ---
 
-A data engineering portfolio piece built to prove the pipeline can be trusted, not just eyeballed. The raw input is synthetically generated to reproduce exactly the mess a real CRM/billing export produces — mixed date formats, mixed currency formatting, duplicate rows, orders referencing a customer who no longer exists — and the pipeline's job is to clean it with tests and automated checks backing every claim.
+The input is generated to look like a real CRM export: mixed date and currency formats, duplicate rows, and orders pointing at customers who no longer exist. The pipeline cleans it, and six data-quality checks gate every run (null keys, duplicate orders, both foreign keys, negative totals, quarantine rate). If any check fails the run exits non-zero and CI goes red.
 
-Six automated data-quality checks gate every run (null primary keys, duplicate order IDs, referential integrity on both foreign keys, no negative order totals, a bounded quarantine rate) and the pipeline exits non-zero — failing CI — if any of them fail. A real bug the test suite caught during development: `DataFrame.to_sql(if_exists="replace")` was silently dropping the hand-written schema's `PRIMARY KEY`/`REFERENCES` constraints; fixed by loading into the existing constrained schema instead.
+The tests caught a real bug on the way: `to_sql(if_exists="replace")` was quietly dropping the schema's primary and foreign keys. It now loads into the existing constrained schema instead.
 
-**Tech stack:** Python, pandas, SQLite, pytest, GitHub Actions
+**Stack:** Python, pandas, SQLite, pytest, GitHub Actions
 
 **Repo:** [sales-etl-pipeline](https://github.com/eddyndumia/sales-etl-pipeline)

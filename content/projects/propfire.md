@@ -1,14 +1,14 @@
 ---
 title: "PropFire"
-summary: "A trading timer and journal app for forex traders who time entries around high-impact news events."
+summary: "A news-release timer and trade journal for forex traders."
 date: 2025-07-02
 tags: ["python", "trading"]
 ---
 
-Forex traders who trade around high-impact news (NFP, CPI, rate decisions) live and die by timing — a few seconds early or late into a release and the fill is nowhere near what the chart showed. PropFire is a countdown timer built specifically for that: pick your trading days, get an accurate EST-based countdown to the release, and stop eyeballing a stock clock against a broker feed that might be a few seconds off.
+Traders who trade high-impact news like NFP, CPI and rate decisions live on timing. A few seconds off and the fill is nowhere near the chart. PropFire is a countdown built for that: pick your trading days and get an accurate EST countdown to the release instead of eyeballing a clock against a broker feed.
 
-Alongside the timer there's a full trade journal — every trade logged with P&L, plus an equity curve so a pattern (revenge trading after a loss, oversizing on a "sure thing") shows up in the data instead of staying a feeling.
+It also keeps a trade journal with P&L and an equity curve, so habits like revenge trading or oversizing show up in the numbers.
 
-**Tech stack:** Python
+**Stack:** Python
 
 **Repo:** [prop-fire](https://github.com/eddyndumia/prop-fire)

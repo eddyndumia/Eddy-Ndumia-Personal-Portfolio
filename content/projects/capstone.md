@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-10-02 to keep the list to shipped work; delete this line to bring it back
 title: "Capstone — AI Lead Assistant for Real Estate Agents"
 summary: "An AI agent that handles WhatsApp and Instagram DMs for real estate agencies — qualifies leads, books viewings, hands off to a human when it should."
 date: 2026-09-22

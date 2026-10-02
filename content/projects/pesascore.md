@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-10-02 to keep the list to shipped work; delete this line to bring it back
 title: "PesaScore"
 summary: "Alt-data credit scoring platform that scores creditworthiness from M-Pesa statements instead of a traditional credit bureau."
 date: 2026-09-13

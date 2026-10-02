@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-10-02 to keep the list to shipped work; delete this line to bring it back
 title: "Customer Churn Classification"
 summary: "Churn prediction with a real business-dollar payoff, not just an accuracy score — EDA, imbalance-aware model comparison, confusion matrix translated into $ saved."
 date: 2026-09-22

@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-10-02 to keep the list to shipped work; delete this line to bring it back
 title: "RAG Chatbot"
 summary: "A LangChain-based RAG chatbot for interacting with custom textual datasets."
 date: 2025-06-20

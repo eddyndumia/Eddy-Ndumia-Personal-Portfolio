@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-10-02 to keep the list to shipped work; delete this line to bring it back
 title: "Dream House"
 summary: "A house-search website for rentals, apartments, Airbnbs, and hostels."
 date: 2025-10-07

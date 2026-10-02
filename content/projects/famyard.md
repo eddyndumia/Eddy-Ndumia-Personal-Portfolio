@@ -1,10 +1,15 @@
 ---
 title: "Famyard Enterprises"
-summary: "Client website for Famyard Enterprises — listings, gallery, services, and blog."
+summary: "Website and CMS for a land sales company in Nyeri, Laikipia and Nanyuki. Live at famyard.co.ke."
 date: 2025-04-29
-tags: ["html", "css", "freelance"]
+tags: ["nextjs", "postgres", "client"]
+weight: 2
 ---
 
-A brochure site built for Famyard Enterprises — home, about, a gallery, a listings page, services, and a blog, all static HTML/CSS. Part of the freelance web work I've kept doing on the side since 2020, mostly small Kenyan businesses that need a real site instead of just a Facebook page.
+Famyard sells plots in Nyeri, Laikipia and Nanyuki. Their old site was WordPress and only one person could change anything on it. I rebuilt it in Next.js and gave them their own CMS, so the team runs it themselves.
 
-**Repo:** [famyardent](https://github.com/eddyndumia/famyardent)
+Staff log in with their own role and manage plots (availability, a map, 360° photos), the blog, testimonials, slides and the gallery. Inquiries land in one inbox and move through a sales pipeline from first contact to site visit to sale. There's spam filtering, two-factor login, nightly encrypted backups, and every old WordPress link still redirects to the right page.
+
+**Stack:** Next.js, Postgres with Drizzle, Supabase, Render, Cloudflare.
+
+**Live:** [famyard.co.ke](https://famyard.co.ke)

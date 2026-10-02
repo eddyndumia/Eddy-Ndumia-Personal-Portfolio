@@ -2,4 +2,4 @@
 title: "Projects"
 ---
 
-The systems, tools, and experiments I've built, from Chukua (live on Android) and a fintech credit-scoring platform to a multi-tenant AI agent platform, trading tools, and client sites. Each entry links to its GitHub repo or where you can use it.
+Things I've built and shipped, from Chukua and client sites to data pipelines and trading tools. Each one links to the live thing or its repo.

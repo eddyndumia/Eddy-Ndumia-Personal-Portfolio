@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-10-02 to keep the list to shipped work; delete this line to bring it back
 title: "Lead Scoring App"
 summary: "A lead-scoring classifier deployed as a real Streamlit app, with precision/recall thresholds tied to actual sales team capacity instead of a bare accuracy score."
 date: 2026-09-22
