@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "https://eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio/:splat"
+  status = 301
+  force = true
