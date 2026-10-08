@@ -16,6 +16,6 @@ Claims will cost a small M-Pesa fee so people only claim what they'll pick up. D
 
 **Status:** live, v1.1.0, Android.
 
-**Download:** [chukua.ndumiaeddy8.workers.dev](https://chukua.ndumiaeddy8.workers.dev)
+**Download:** [chukua.chukua.workers.dev](https://chukua.chukua.workers.dev)
 
 **Why I built it:** [Nairobi Is Full of Free Stuff. Nobody Can Find It.](../../posts/nairobi-is-full-of-free-stuff-nobody-can-find/)

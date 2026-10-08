@@ -74,7 +74,7 @@ def build_story():
     ))
     s.append(Paragraph(
         "- Live October 2026 (v1.1.1): web game and signed Android APK, Google Play closed test running. "
-        '<link href="https://aura-farm.ndumiaeddy8.workers.dev">aura-farm.ndumiaeddy8.workers.dev</link>',
+        '<link href="https://aura-farm.chukua.workers.dev">aura-farm.chukua.workers.dev</link>',
         styles["bullet"]
     ))
 
@@ -88,7 +88,7 @@ def build_story():
     ))
     s.append(Paragraph(
         "- Live as a first release (v1.0.0, October 2026): signed Android app, email-code sign-in, free claims "
-        'for the Nairobi pilot. <link href="https://chukua.ndumiaeddy8.workers.dev">chukua.ndumiaeddy8.workers.dev</link>',
+        'for the Nairobi pilot. <link href="https://chukua.chukua.workers.dev">chukua.chukua.workers.dev</link>',
         styles["bullet"]
     ))
 

@@ -13,4 +13,4 @@ It's TypeScript on a plain canvas, no engine, so the same code runs in the brows
 
 You can play it in the browser or get the Android app from GitHub. The Play Store version needs fourteen days of testing first, so that comes around mid October. If you want to be a tester, send me your Gmail.
 
-[Play Aura Farm](https://aura-farm.ndumiaeddy8.workers.dev/play/) if you're curious.
+[Play Aura Farm](https://aura-farm.chukua.workers.dev/play/) if you're curious.

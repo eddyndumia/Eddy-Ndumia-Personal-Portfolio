@@ -5,7 +5,7 @@ date: 2026-10-01T12:00:00+03:00
 
 A week ago I wrote about how Nairobi is full of free stuff nobody can find. The sofa outside the gate after a move, the cot in the store, the twenty office chairs nobody knows what to do with. And somebody a few kilometres away who needs exactly that thing.
 
-Chukua is out now. Version 1.0.0, Android, you can download it from [the site](https://chukua.ndumiaeddy8.workers.dev).
+Chukua is out now. Version 1.0.0, Android, you can download it from [the site](https://chukua.chukua.workers.dev).
 
 It's small and that's on purpose. You list something in about thirty seconds, people near you see it, someone claims it and comes for it. Your number stays private until someone has claimed. If the item is still there on the day you said it had to be gone, the listing just disappears.
 

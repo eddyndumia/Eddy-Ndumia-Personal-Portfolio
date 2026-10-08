@@ -1,4 +1,6 @@
-# ndumia.netlify.app
+# Eddy Ndumia portfolio
+
+Canonical site: <https://eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio/>. The `eddyndumia.github.io` root and `ndumia.netlify.app` are aliases that redirect here.
 
 My site. Projects, bio, resume and a blog. Hugo with the PaperMod theme, restyled to stay out of the way.
 
