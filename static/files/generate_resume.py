@@ -22,7 +22,7 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 
 OUT = "Eddy_Ndumia_Resume.pdf"
 # Live site. Change here when the portfolio moves to its own domain.
-SITE = "https://eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio/"
+SITE = "https://eddyndumia.github.io/"
 
 styles = {
     "name": ParagraphStyle("name", fontName="Times-Bold", fontSize=24, leading=28, spaceAfter=2),
@@ -47,7 +47,7 @@ def build_story():
     s.append(Paragraph("Eddy Ndumia", styles["name"]))
     s.append(Paragraph("Developer and data engineer (AWS) - Maths &amp; Computer Science, JKUAT - Nairobi, Kenya", styles["tagline"]))
     s.append(Paragraph(
-        f'<link href="{SITE}">eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio</link> | '
+        f'<link href="{SITE}">eddyndumia.github.io</link> | '
         '<link href="https://github.com/eddyndumia">github.com/eddyndumia</link> | '
         '<link href="https://www.linkedin.com/in/eddyndumia/">linkedin.com/in/eddyndumia</link>',
         styles["contact"]
@@ -120,7 +120,7 @@ def build_story():
     ]
     for name, desc in projects:
         s.append(Paragraph(f"<b>{name}</b> - {desc}", styles["project"]))
-    s.append(Paragraph(f'Full write-ups and repo links: <link href="{SITE}projects/">eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio/projects</link>', styles["note"]))
+    s.append(Paragraph(f'Full write-ups and repo links: <link href="{SITE}projects/">eddyndumia.github.io/projects</link>', styles["note"]))
 
     s.append(Paragraph("SKILLS", styles["section"]))
     s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, SQL", styles["body"]))

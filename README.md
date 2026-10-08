@@ -1,6 +1,6 @@
 # Eddy Ndumia portfolio
 
-Canonical site: <https://eddyndumia.github.io/Eddy-Ndumia-Personal-Portfolio/>. The `eddyndumia.github.io` root and `ndumia.netlify.app` are aliases that redirect here.
+Canonical site: <https://eddyndumia.github.io/>. The root GitHub Pages site and `ndumia.netlify.app` publish the same Hugo content from this repository. The project-path URL is retained as a legacy copy.
 
 My site. Projects, bio, resume and a blog. Hugo with the PaperMod theme, restyled to stay out of the way.
 
