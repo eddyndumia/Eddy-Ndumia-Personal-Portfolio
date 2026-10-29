@@ -14,7 +14,7 @@ It's TypeScript on a plain canvas, no game engine, so the same code runs in the 
 
 **Status:** live, v1.1.1, web and Android APK. Google Play after the 14-day closed test, mid October.
 
-**Play:** [aura-farm.chukua.workers.dev](https://aura-farm.chukua.workers.dev/play/)
+**Play:** [aura-farm.eddyndumia.workers.dev](https://aura-farm.eddyndumia.workers.dev/play/)
 
 **Android:** [download the APK](https://github.com/eddyndumia/aura-farm-releases/releases/latest)
 
