@@ -74,7 +74,7 @@ def build_story():
     ))
     s.append(Paragraph(
         "- Live October 2026 (v1.1.1): web game and signed Android APK, Google Play closed test running. "
-        '<link href="https://aura-farm.chukua.workers.dev">aura-farm.chukua.workers.dev</link>',
+        '<link href="https://aura-farm.eddyndumia.workers.dev">aura-farm.eddyndumia.workers.dev</link>',
         styles["bullet"]
     ))
 
@@ -88,7 +88,21 @@ def build_story():
     ))
     s.append(Paragraph(
         "- Live as a first release (v1.0.0, October 2026): signed Android app, email-code sign-in, free claims "
-        'for the Nairobi pilot. <link href="https://chukua.chukua.workers.dev">chukua.chukua.workers.dev</link>',
+        'for the Nairobi pilot. <link href="https://chukua.eddyndumia.workers.dev">chukua.eddyndumia.workers.dev</link>',
+        styles["bullet"]
+    ))
+
+    s.append(Paragraph("Builder - Voice Forge", styles["role"]))
+    s.append(Paragraph("2026 - Present", styles["date"]))
+    s.append(Paragraph(
+        "- Windows desktop app for AI song covers in Python (FastAPI + pywebview): vocal separation (BS-Roformer), "
+        "RVC voice conversion and a mix and master chain (pedalboard, Matchering). GPU jobs run on free Kaggle T4s "
+        "driven through the Kaggle API, local splitting on DirectML. Lyrics to song with ACE-Step, voice training with a consent step.",
+        styles["bullet"]
+    ))
+    s.append(Paragraph(
+        "- Voice registry with licenses: only own or licensed voices can be published. Community site on Cloudflare "
+        "Workers, D1 and R2 with Google sign-in and PKCE app login, built but not deployed. Private, in development.",
         styles["bullet"]
     ))
 
@@ -115,6 +129,7 @@ def build_story():
     projects = [
         ("Aura Farm", "Brainrot arcade game, catch the Ws and evolve into Tung Tung Tung Sahur. TypeScript + Capacitor, live on web and Android."),
         ("Chukua", "Free things from people near you in Nairobi. Flutter + Supabase, live on Android since October 2026."),
+        ("Voice Forge", "Desktop app that re-sings a song or your own recorded vocal in another voice, mixes and masters it. Python, heavy GPU work on free Kaggle T4s."),
         ("Sales ETL Pipeline", "Messy raw sales data cleaned, tested, and loaded into a quality-gated SQLite warehouse; 6 automated data-quality checks gate every run."),
         ("Sales Demand Forecasting", "Seasonal-naive vs. SARIMA vs. XGBoost on a 90-day holdout; XGBoost's calendar features catch the yearly retail spikes SARIMA misses."),
     ]
@@ -125,7 +140,7 @@ def build_story():
     s.append(Paragraph("SKILLS", styles["section"]))
     s.append(Paragraph("<b>Languages:</b> Python, TypeScript, JavaScript/Node.js, Dart, SQL", styles["body"]))
     s.append(Paragraph("<b>Data:</b> Pandas, NumPy, Scikit-learn, XGBoost, statsmodels, Airflow", styles["body"]))
-    s.append(Paragraph("<b>Infra:</b> Postgres, PostGIS, Supabase, Docker, AWS", styles["body"]))
+    s.append(Paragraph("<b>Infra:</b> Postgres, PostGIS, Supabase, Cloudflare Workers, Docker, AWS", styles["body"]))
     s.append(Paragraph("<b>Web &amp; mobile:</b> React, Next.js, Flutter, Capacitor, WordPress", styles["body"]))
 
     return s
