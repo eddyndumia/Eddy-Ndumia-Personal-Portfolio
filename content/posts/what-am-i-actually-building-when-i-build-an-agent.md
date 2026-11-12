@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-11-12: built around PesaScore/Capstone, which are hidden; delete this line to bring it back
 title: "What Am I Actually Building When I Build an Agent"
 date: 2026-09-20
 ---

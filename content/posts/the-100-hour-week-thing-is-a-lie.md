@@ -15,13 +15,13 @@ And the bad hours aren't free. That's the part that took me longest to see. A ti
 
 So I changed how I work, and it's not complicated.
 
-The first good hours go to the hardest thing. Whatever needs actual thinking on PesaScore or Capstone, a design decision, a nasty bug, a data problem, gets the morning or whenever my head is clearest. Not email, not small fixes, not tidying up.
+The first good hours go to the hardest thing. Whatever needs actual thinking, a design decision, a nasty bug, a data problem, gets the morning or whenever my head is clearest. Not email, not small fixes, not tidying up.
 
 The rest of the day is for the stuff that doesn't need a sharp brain. Replying to people, reviewing, writing things down, small changes I can do half asleep without breaking anything.
 
 When I notice I've read the same line of code three times, I stop. That's the signal. Pushing past it almost never works.
 
-I'm not trying to be the guy who says "just relax bro, work smart not hard," that's its own kind of annoying. Some weeks genuinely need the long hours. Deadlines are real, and PesaScore and Capstone both eat late nights when they need to. Honestly I like the quiet of a late night sometimes. There's a difference between choosing a late night because the problem needs it and grinding every night because you think the hours prove something.
+I'm not trying to be the guy who says "just relax bro, work smart not hard," that's its own kind of annoying. Some weeks genuinely need the long hours. Deadlines are real, and client work eats late nights when it needs to. Honestly I like the quiet of a late night sometimes. There's a difference between choosing a late night because the problem needs it and grinding every night because you think the hours prove something.
 
 I'm also not pretending I've fixed this. Some weeks I slide right back into it, especially when money is tight and it feels like more hours has to mean more progress. The feeling doesn't go away just because you know it's wrong.
 

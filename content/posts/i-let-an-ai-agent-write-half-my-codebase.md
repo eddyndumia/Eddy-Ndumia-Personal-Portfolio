@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-11-12: built around PesaScore/Capstone, which are hidden; delete this line to bring it back
 title: "I Let an AI Agent Write Half My Codebase, Ask Me Anything"
 date: 2026-09-17
 ---

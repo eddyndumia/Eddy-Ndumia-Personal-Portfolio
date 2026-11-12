@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-11-12: built around PesaScore, which is hidden; delete this line to bring it back
 title: "Building From Nairobi While Everyone Else Talks About San Francisco"
 date: 2026-09-15
 ---

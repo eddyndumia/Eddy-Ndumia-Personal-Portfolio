@@ -1,4 +1,5 @@
 ---
+draft: true  # hidden 2026-11-12: built around PesaScore/Capstone, which are hidden; delete this line to bring it back
 title: "Your M-Pesa Statement Already Knows If You'll Pay Back"
 date: 2026-09-23T12:00:00+03:00
 ---

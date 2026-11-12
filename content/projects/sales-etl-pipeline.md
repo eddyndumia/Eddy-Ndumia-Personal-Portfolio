@@ -2,6 +2,7 @@
 title: "Sales ETL Pipeline"
 summary: "Batch ETL that takes a messy sales export, cleans and tests it, and loads it into a SQLite warehouse that refuses bad data."
 date: 2026-09-22
+weight: 5
 tags: ["python", "sql", "data-engineering", "pandas"]
 ---
 

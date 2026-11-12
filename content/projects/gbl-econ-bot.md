@@ -2,6 +2,7 @@
 title: "GBL SuperTrading Bot"
 summary: "Discord bot that posts a filtered weekly economic calendar to a trading community."
 date: 2026-05-18
+weight: 7
 tags: ["javascript", "node", "trading", "discord"]
 ---
 

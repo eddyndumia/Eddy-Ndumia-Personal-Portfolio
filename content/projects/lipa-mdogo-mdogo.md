@@ -2,6 +2,7 @@
 title: "Lipa Mdogo Mdogo"
 summary: "Backend for pay-as-you-go financing, the kind behind phone installment plans."
 date: 2025-07-09
+weight: 8
 tags: ["node", "javascript", "fintech"]
 ---
 

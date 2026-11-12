@@ -2,6 +2,7 @@
 title: "Sales Demand Forecasting"
 summary: "Daily sales forecast 90 days out, comparing seasonal-naive, SARIMA and XGBoost, and why SARIMA misses the holiday spike."
 date: 2026-09-22
+weight: 6
 tags: ["python", "time-series", "statsmodels", "xgboost"]
 ---
 

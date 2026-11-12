@@ -2,6 +2,7 @@
 title: "PropFire"
 summary: "A news-release timer and trade journal for forex traders."
 date: 2025-07-02
+weight: 9
 tags: ["python", "trading"]
 ---
 

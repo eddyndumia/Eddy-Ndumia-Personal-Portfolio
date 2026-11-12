@@ -2,4 +2,4 @@
 title: "Projects"
 ---
 
-Things I've built and shipped, from Chukua and client sites to data pipelines and trading tools. Each one links to the live thing or its repo.
+Client work first, then my own product and smaller builds. Each one links to the live site or its repo.

@@ -3,7 +3,7 @@ title: "Voice Forge"
 summary: "Windows desktop app that re-sings a song, or your own recorded vocal, in another voice and mixes and masters it. Heavy GPU work runs on free Kaggle T4s. In development."
 date: 2026-10-29
 tags: ["python", "audio", "kaggle", "cloudflare"]
-weight: 4
+weight: 10
 ---
 
 You paste a Suno link, drop in a song, or record your own vocal over a beat inside the app. Voice Forge separates the vocal from the instrumental, re-sings it in the voice you picked, and mixes and masters it back over the beat.
